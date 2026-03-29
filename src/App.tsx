@@ -66,11 +66,6 @@ const supportFeatureCards = [
     title: 'Mật khẩu và sinh trắc học',
     desc: 'Bạn có thể đặt mật khẩu truy cập app và mở khoá bằng vân tay/Face ID.',
   },
-  {
-    icon: 'folder_zip',
-    title: 'Sao lưu và khôi phục bằng file',
-    desc: 'Khi cài lại app, bạn cần tạo file backup và khôi phục lại từ file sao lưu đó.',
-  },
 ]
 
 const mockupPages = [
