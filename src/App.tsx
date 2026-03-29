@@ -57,6 +57,8 @@ const contactCards = [
   },
 ]
 
+const appLogoUrl = `${import.meta.env.BASE_URL}app-logo.png`
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -92,7 +94,7 @@ function AppLayout({ children }: { children: ReactNode }) {
         <nav className="max-w-7xl mx-auto bg-zinc-950/40 backdrop-blur-xl border border-white/10 shadow-2xl rounded-full px-6 h-14 flex items-center justify-between font-sans antialiased tracking-tight">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 shrink-0">
-              <img src="/app-logo.png" alt="Logo Ví Giấy Tờ" className="w-8 h-8 rounded-lg" />
+              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-8 h-8 rounded-lg" />
               <span className="text-xl font-bold tracking-tighter text-zinc-50">Ví Giấy Tờ</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
@@ -296,7 +298,7 @@ function HomePage() {
           {experienceItems.map((item) => (
             <article className="flex-none w-56 snap-center group glass-card rounded-3xl p-5" key={item.title}>
               <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 border border-white/10">
-                <img src="/app-logo.png" alt="" className="w-8 h-8 rounded-lg" />
+                <img src={appLogoUrl} alt="" className="w-8 h-8 rounded-lg" />
               </div>
               <h3 className="text-base font-bold text-white">{item.title}</h3>
               <p className="text-xs text-white/60 mt-2 leading-relaxed">{item.desc}</p>
