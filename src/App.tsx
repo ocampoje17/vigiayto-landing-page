@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link, NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
+const baseUrl = import.meta.env.BASE_URL
+const appLogoUrl = `${baseUrl}app-logo.png`
+
 const privacyPoints = [
   'Bạn luôn biết thông tin nào đang được lưu trong app.',
   'Dữ liệu của bạn lưu 100% offline trên máy bạn, không được gửi đi bất kỳ đâu, không lo lộ lọt thông tin cá nhân, giấy tờ.',
@@ -10,36 +13,89 @@ const privacyPoints = [
 
 const benefitCards = [
   {
-    icon: 'photo_camera',
-    title: 'Thêm giấy tờ rất nhanh',
-    desc: 'Bạn có thể chụp, scan, chọn từ thư viện hoặc đính kèm PDF trong vài thao tác.',
+    icon: 'add_a_photo',
+    title: 'Thêm giấy tờ theo cách bạn quen',
+    desc: 'Chụp ảnh, scan thông minh, chọn từ thư viện hoặc đính kèm PDF đều được.',
     tone: 'bg-indigo-500/20 text-indigo-300',
   },
   {
     icon: 'manage_search',
-    title: 'Tìm lại trong vài giây',
-    desc: 'Tìm theo tên, phân loại, ghi chú, và cả nội dung chữ đã nhận diện từ ảnh/PDF.',
+    title: 'Tìm lại cực nhanh',
+    desc: 'Tìm theo tên, phân loại, ghi chú và cả chữ trong ảnh/PDF sau khi app nhận diện.',
     tone: 'bg-violet-500/20 text-violet-300',
   },
   {
-    icon: 'wifi_off',
-    title: '100% offline',
-    desc: 'Dữ liệu nằm trên máy bạn. Không cần cloud, không gửi dữ liệu cá nhân ra ngoài.',
+    icon: 'shield_lock',
+    title: 'Riêng tư và an toàn',
+    desc: 'Khóa app bằng mật khẩu, vân tay/Face ID, chống chụp màn hình và lưu dữ liệu offline.',
     tone: 'bg-emerald-500/20 text-emerald-300',
   },
 ]
 
-const experienceItems = [
-  { title: 'Ghim giấy tờ quan trọng', desc: 'Giấy tờ hay dùng luôn ở đầu danh sách để mở nhanh.' },
+const featureCards = [
   {
-    title: 'Khóa app bằng mật khẩu',
-    desc: 'Bạn có thể bật mật khẩu và mở nhanh bằng vân tay hoặc Face ID trên máy hỗ trợ.',
+    icon: 'home_storage',
+    title: 'Trang chủ dễ theo dõi',
+    desc: 'Xem nhanh giấy tờ đã ghim, sắp hết hạn, quá hạn và mở lại trong vài giây.',
   },
-  { title: 'Nhắc ngày hết hạn', desc: 'Ứng dụng nhắc trước khi giấy tờ sắp hết hạn để bạn chủ động gia hạn.' },
-  { title: 'Thùng rác 30 ngày', desc: 'Lỡ xóa vẫn có thể khôi phục trước khi bị xóa vĩnh viễn.' },
-  { title: 'Xuất backup .vgtd', desc: 'Sao lưu dữ liệu thành 1 file để cất giữ hoặc chuyển sang máy khác.' },
-  { title: 'Khôi phục bằng PIN 6 số', desc: 'File sao lưu có mã PIN để bảo vệ khi chia sẻ hoặc lưu trữ.' },
-  { title: 'My Documents cá nhân', desc: 'Lưu ghi chú nhanh kèm ảnh, video, file trong kho riêng tiện tra cứu.' },
+  {
+    icon: 'edit_note',
+    title: 'Màn hình thêm/sửa giấy tờ',
+    desc: 'Một nơi để thêm ảnh, PDF, ghi chú, phân loại, ngày hết hạn và sắp xếp trang dễ dàng.',
+  },
+  {
+    icon: 'text_search',
+    title: 'Tìm kiếm không dấu',
+    desc: 'Gõ từ khoá theo kiểu tự nhiên, app vẫn tìm được dù bạn không gõ dấu tiếng Việt.',
+  },
+  {
+    icon: 'event_upcoming',
+    title: 'Nhắc hết hạn tự động',
+    desc: 'Bật thông báo để app nhắc trước hạn, tránh quên gia hạn giấy tờ quan trọng.',
+  },
+  {
+    icon: 'folder_zip',
+    title: 'Sao lưu và khôi phục',
+    desc: 'Xuất thành file .vgtd, đặt PIN 6 số để bảo vệ, nhập lại khi đổi máy hoặc cần phục hồi.',
+  },
+  {
+    icon: 'delete_sweep',
+    title: 'Thùng rác 30 ngày',
+    desc: 'Lỡ xoá vẫn khôi phục được. Sau 30 ngày app mới xoá vĩnh viễn để giữ máy gọn.',
+  },
+]
+
+const mockupPages = [
+  {
+    title: 'Trang chủ giấy tờ',
+    desc: 'Danh sách giấy tờ, mục đã ghim và thống kê sắp hết hạn.',
+    image: `${baseUrl}mockups/home-overview.svg`,
+  },
+  {
+    title: 'Thêm giấy tờ mới',
+    desc: 'Scan/chụp/chọn ảnh/PDF rồi điền thông tin trong cùng một màn hình.',
+    image: `${baseUrl}mockups/document-wizard.svg`,
+  },
+  {
+    title: 'Tìm kiếm OCR',
+    desc: 'Tìm theo tên, phân loại, ghi chú và chữ nhận diện từ tài liệu.',
+    image: `${baseUrl}mockups/search-ocr.svg`,
+  },
+  {
+    title: 'Backup .vgtd',
+    desc: 'Xuất và nhập dữ liệu bằng file sao lưu có mã PIN 6 số.',
+    image: `${baseUrl}mockups/backup-restore.svg`,
+  },
+  {
+    title: 'Bảo mật trong cài đặt',
+    desc: 'Bật mật khẩu, sinh trắc học, chống chụp màn hình và quản lý thông báo.',
+    image: `${baseUrl}mockups/security-settings.svg`,
+  },
+  {
+    title: 'My Documents cá nhân',
+    desc: 'Lưu ghi chú nhanh kèm ảnh, video, file để tra cứu lại khi cần.',
+    image: `${baseUrl}mockups/my-documents.svg`,
+  },
 ]
 
 const contactCards = [
@@ -56,8 +112,6 @@ const contactCards = [
     icon: 'send',
   },
 ]
-
-const appLogoUrl = `${import.meta.env.BASE_URL}app-logo.png`
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -219,15 +273,15 @@ function HomePage() {
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl text-center md:text-left">
             <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
-              The Digital Archivist
+              Ví giấy tờ cho mọi người
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.1] mb-6">
-              An tâm lưu trữ <br />
-              mọi giấy tờ cá nhân.
+              Lưu giấy tờ gọn gàng, <br />
+              tìm lại cực nhanh.
             </h1>
             <p className="text-base md:text-lg text-white/70 font-light max-w-md mb-8 leading-relaxed">
-              Ví Giấy Tờ giúp bạn gom giấy tờ vào một chỗ, tìm lại nhanh, nhắc hạn đúng lúc và sao lưu
-              an toàn. Mọi thứ được thiết kế để ai cũng dùng được, không cần rành công nghệ.
+              Từ CCCD, bằng lái đến hồ sơ cá nhân, bạn có thể quản lý ngay trên điện thoại.
+              Dễ dùng cho người phổ thông, thao tác rõ ràng, không rối.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
@@ -251,23 +305,13 @@ function HomePage() {
           <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center">
             <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-[80px] animate-pulse" />
             <div className="relative bg-white/5 backdrop-blur-2xl p-12 rounded-[3rem] rotate-12 shadow-2xl border border-white/10">
-              <span
-                className="material-symbols-outlined text-[120px] text-white opacity-90 filter drop-shadow-2xl"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                verified_user
-              </span>
+              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-[120px] h-[120px] rounded-[28px] object-cover" />
             </div>
             <div className="absolute -top-4 -right-2 bg-white/10 backdrop-blur-xl p-4 rounded-2xl -rotate-12 shadow-lg border border-white/20">
-              <span
-                className="material-symbols-outlined text-white/80 text-xl"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                lock
-              </span>
+              <span className="material-symbols-outlined text-white/80 text-xl">lock</span>
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-xl p-5 rounded-2xl rotate-6 shadow-lg border border-white/20">
-              <span className="material-symbols-outlined text-white/80 text-2xl">fingerprint</span>
+              <span className="material-symbols-outlined text-white/80 text-2xl">wifi_off</span>
             </div>
           </div>
         </div>
@@ -292,15 +336,35 @@ function HomePage() {
 
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white">Bạn sẽ dùng mỗi ngày</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Những gì bạn làm được trong app</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {featureCards.map((item) => (
+            <article key={item.title} className="glass-card rounded-3xl p-5 transition-all hover:bg-white/10">
+              <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4">
+                <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+              </div>
+              <h3 className="text-white font-bold text-base">{item.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed mt-2">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Mockup các trang chính</h2>
         </div>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
-          {experienceItems.map((item) => (
-            <article className="flex-none w-56 snap-center group glass-card rounded-3xl p-5" key={item.title}>
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4 border border-white/10">
-                <img src={appLogoUrl} alt="" className="w-8 h-8 rounded-lg" />
-              </div>
-              <h3 className="text-base font-bold text-white">{item.title}</h3>
+          {mockupPages.map((item) => (
+            <article className="flex-none w-[280px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
+              <img
+                src={item.image}
+                alt={`Mockup ${item.title}`}
+                className="w-full h-[520px] object-cover rounded-[1.8rem] border border-white/10 shadow-2xl"
+                loading="lazy"
+              />
+              <h3 className="text-base font-bold text-white mt-4">{item.title}</h3>
               <p className="text-xs text-white/60 mt-2 leading-relaxed">{item.desc}</p>
             </article>
           ))}
@@ -311,13 +375,13 @@ function HomePage() {
         <div className="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group">
           <div className="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
             <img
-              alt="Biometric interface"
+              alt="Privacy background"
               className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBplopES53gxjW9O-ZNxl6eVp23KPqlw9ktar90E0iGuGc4WocKdqsaDt4yxfdsftrEzryNvpnnXub9Q97JmRQsoYISsDoU3b-HH21Gs2T9A-ciaeM2FgeiNEhcz_RSsaxg63J2RfXTfPWzIRAQoeG0z-PgHGP6ma-_xvZKono0yYUUn7Qfq-gOMNmEz6irp2tvjW1GSHRxnqAGl-cph_4AbuceokXuz7uJadSARsv58dKSc1I0ADaN-BmUwLpUFOE2kthi0iyMTTE"
+              src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80"
             />
           </div>
           <div className="relative z-10">
-            <h4 className="text-2xl font-bold tracking-tight text-white mb-2">Cam kết rõ ràng về dữ liệu</h4>
+            <h4 className="text-2xl font-bold tracking-tight text-white mb-2">Cam kết rõ ràng về quyền riêng tư</h4>
             <ul className="text-sm text-white/70 space-y-2">
               {privacyPoints.map((point) => (
                 <li key={point}>• {point}</li>
@@ -333,7 +397,7 @@ function HomePage() {
           <div>
             <h4 className="font-bold text-lg text-white">Nhắc hạn tự động mỗi ngày</h4>
             <p className="text-xs text-white/60 leading-relaxed">
-              Bật thông báo để nhận nhắc khi giấy tờ sắp hết hạn, tránh quên các mốc quan trọng.
+              Khi bật thông báo, app sẽ nhắc theo mốc gần hạn để bạn không bỏ sót giấy tờ quan trọng.
             </p>
           </div>
         </div>
@@ -344,7 +408,7 @@ function HomePage() {
         </div>
         <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
           <div className="text-3xl font-extrabold text-white mb-1">PIN 6 số</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Bảo Vệ File Backup</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Mã Hoá Backup</div>
         </div>
       </section>
     </main>
@@ -364,45 +428,36 @@ function TermsPage() {
         <section>
           <h2 className="text-lg font-bold">1. Mục đích sử dụng</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Ví giấy tờ giúp bạn lưu và quản lý thông tin giấy tờ cá nhân để tra cứu thuận tiện hơn.
-            Ứng dụng không thay thế hoàn toàn giấy tờ bản gốc trong các trường hợp pháp luật yêu cầu.
+            Ví giấy tờ giúp bạn quản lý bản chụp và thông tin giấy tờ cá nhân để tra cứu nhanh. Ứng dụng hỗ trợ
+            lưu trữ tiện lợi nhưng không thay thế hoàn toàn giấy tờ bản gốc trong các trường hợp pháp luật yêu cầu.
           </p>
         </section>
         <section>
           <h2 className="text-lg font-bold">2. Trách nhiệm của người dùng</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Bạn cần cung cấp thông tin đúng sự thật, bảo vệ thiết bị cá nhân và không chia sẻ trái phép
-            dữ liệu của người khác.
+            Bạn chịu trách nhiệm về nội dung đưa vào app, bảo quản thiết bị cá nhân, bảo mật mật khẩu/PIN và không
+            chia sẻ trái phép giấy tờ của người khác.
           </p>
         </section>
         <section>
-          <h2 className="text-lg font-bold">3. Bảo mật tài khoản và thiết bị</h2>
+          <h2 className="text-lg font-bold">3. Sao lưu và khôi phục</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Bạn nên bật mật khẩu ứng dụng, sinh trắc học và giữ an toàn cho điện thoại của mình. Nếu
-            cho người khác mượn máy, hãy cân nhắc khóa ứng dụng để tránh lộ thông tin giấy tờ.
+            App cho phép xuất file sao lưu `.vgtd` và đặt PIN 6 số. Bạn cần giữ file backup và PIN cẩn thận.
+            Nếu mất file hoặc quên PIN, dữ liệu có thể không khôi phục lại được.
           </p>
         </section>
         <section>
-          <h2 className="text-lg font-bold">4. Sao lưu và khôi phục dữ liệu</h2>
+          <h2 className="text-lg font-bold">4. Xoá dữ liệu và thùng rác</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Ứng dụng có tính năng xuất file sao lưu để bạn tự lưu giữ. Bạn chịu trách nhiệm bảo quản
-            file sao lưu và mã PIN khôi phục. Nếu mất file hoặc quên PIN, dữ liệu có thể không khôi
-            phục lại được.
+            Mục đã xoá sẽ vào thùng rác để bạn khôi phục trong thời gian cho phép. Sau đó, dữ liệu có thể bị xoá
+            vĩnh viễn khỏi ứng dụng.
           </p>
         </section>
         <section>
-          <h2 className="text-lg font-bold">5. Giới hạn sử dụng</h2>
+          <h2 className="text-lg font-bold">5. Cập nhật điều khoản</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Không dùng ứng dụng cho mục đích vi phạm pháp luật, gian lận giấy tờ, hoặc gây ảnh hưởng
-            đến quyền lợi của người khác.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-lg font-bold">6. Điều chỉnh điều khoản</h2>
-          <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Nội dung điều khoản có thể được cập nhật để phù hợp với phiên bản mới và quy định pháp lý.
-            Khi tiếp tục sử dụng ứng dụng sau khi điều khoản thay đổi, bạn đồng ý với nội dung cập
-            nhật đó.
+            Điều khoản có thể được cập nhật theo phiên bản ứng dụng mới hoặc yêu cầu pháp lý. Việc bạn tiếp tục sử dụng
+            ứng dụng sau thời điểm cập nhật đồng nghĩa với việc bạn đồng ý điều khoản mới.
           </p>
         </section>
       </section>
@@ -430,29 +485,29 @@ function PrivacyPage() {
         <section>
           <h2 className="text-lg font-bold">Dữ liệu nào được lưu trong ứng dụng</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Ví giấy tờ lưu các thông tin bạn tự nhập như tên giấy tờ, ảnh, PDF, ghi chú, phân loại,
-            ngày hết hạn và nội dung chữ nhận diện từ ảnh/PDF để hỗ trợ tìm kiếm nhanh.
+            Ví giấy tờ lưu các thông tin do bạn tạo: tên giấy tờ, hình ảnh, PDF, ghi chú, phân loại, ngày hết hạn,
+            và nội dung chữ nhận diện để hỗ trợ tìm kiếm nhanh hơn.
           </p>
         </section>
         <section>
           <h2 className="text-lg font-bold">Quyền truy cập trên thiết bị</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Ứng dụng chỉ xin quyền khi cần dùng tính năng tương ứng, ví dụ: camera để chụp/scan, thư
-            viện để chọn ảnh, thông báo để nhắc hạn. Bạn có thể tắt các quyền này trong cài đặt máy.
+            App chỉ xin quyền khi cần dùng tính năng tương ứng: camera để chụp/scan, thư viện để chọn ảnh,
+            thông báo để nhắc hết hạn. Bạn có thể tắt từng quyền trong cài đặt máy bất cứ lúc nào.
           </p>
         </section>
         <section>
-          <h2 className="text-lg font-bold">Sao lưu dữ liệu và mã PIN</h2>
+          <h2 className="text-lg font-bold">Bảo vệ khi sao lưu dữ liệu</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Khi xuất sao lưu, dữ liệu được đóng gói thành file `.vgtd` và bảo vệ bằng mã PIN do bạn
-            đặt. Bạn cần tự bảo quản file sao lưu và mã PIN để tránh người khác truy cập trái phép.
+            Khi xuất backup, file `.vgtd` được bảo vệ bởi PIN 6 số bạn tự đặt. Chỉ người có PIN đúng mới có thể
+            khôi phục nội dung từ file sao lưu đó.
           </p>
         </section>
         <section>
           <h2 className="text-lg font-bold">Quyền kiểm soát của bạn</h2>
           <p className="text-white/70 mt-2 text-sm leading-relaxed">
-            Bạn có quyền chỉnh sửa, xóa từng mục, khôi phục từ thùng rác, hoặc xóa toàn bộ dữ liệu bất
-            kỳ lúc nào ngay trong ứng dụng.
+            Bạn có thể chỉnh sửa, xóa, khôi phục dữ liệu hoặc xóa toàn bộ dữ liệu ngay trong app. Bạn là người toàn
+            quyền kiểm soát nội dung của mình.
           </p>
         </section>
       </section>

@@ -1,0 +1,37 @@
+<svg width="420" height="840" viewBox="0 0 420 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="420" y2="840">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="840" rx="54" fill="url(#bg)"/>
+  <rect x="18" y="18" width="384" height="804" rx="42" fill="#081225"/>
+  <rect x="44" y="56" width="332" height="50" rx="18" fill="#1E293B"/>
+  <text x="76" y="88" fill="#F8FAFC" font-family="Inter,Arial" font-size="18" font-weight="700">Cai dat bao mat</text>
+  <rect x="44" y="126" width="332" height="92" rx="18" fill="#111827"/>
+  <text x="60" y="158" fill="#E5E7EB" font-family="Inter,Arial" font-size="15" font-weight="700">Bat mat khau</text>
+  <rect x="302" y="148" width="58" height="28" rx="14" fill="#22C55E"/>
+  <circle cx="344" cy="162" r="11" fill="#F8FAFC"/>
+  <text x="60" y="183" fill="#9CA3AF" font-family="Inter,Arial" font-size="12">Yeu cau mat khau khi mo app</text>
+  <rect x="44" y="232" width="332" height="92" rx="18" fill="#111827"/>
+  <text x="60" y="264" fill="#E5E7EB" font-family="Inter,Arial" font-size="15" font-weight="700">Van tay / Face ID</text>
+  <rect x="302" y="254" width="58" height="28" rx="14" fill="#22C55E"/>
+  <circle cx="344" cy="268" r="11" fill="#F8FAFC"/>
+  <text x="60" y="289" fill="#9CA3AF" font-family="Inter,Arial" font-size="12">Mo khoa nhanh bang sinh trac hoc</text>
+  <rect x="44" y="338" width="332" height="92" rx="18" fill="#111827"/>
+  <text x="60" y="370" fill="#E5E7EB" font-family="Inter,Arial" font-size="15" font-weight="700">Chong chup man hinh</text>
+  <rect x="302" y="360" width="58" height="28" rx="14" fill="#1F2937"/>
+  <circle cx="318" cy="374" r="11" fill="#F8FAFC"/>
+  <text x="60" y="395" fill="#9CA3AF" font-family="Inter,Arial" font-size="12">Man hinh se den khi quay/chup</text>
+  <rect x="44" y="444" width="332" height="92" rx="18" fill="#111827"/>
+  <text x="60" y="476" fill="#E5E7EB" font-family="Inter,Arial" font-size="15" font-weight="700">Thong bao het han</text>
+  <rect x="302" y="466" width="58" height="28" rx="14" fill="#22C55E"/>
+  <circle cx="344" cy="480" r="11" fill="#F8FAFC"/>
+  <text x="60" y="501" fill="#9CA3AF" font-family="Inter,Arial" font-size="12">Nhac theo moc quan trong moi ngay</text>
+  <rect x="44" y="560" width="332" height="178" rx="18" fill="#111827"/>
+  <text x="60" y="592" fill="#93C5FD" font-family="Inter,Arial" font-size="14">Tom tat</text>
+  <text x="60" y="622" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Du lieu luu offline tren may</text>
+  <text x="60" y="646" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Co the xoa toan bo du lieu bat ky luc nao</text>
+  <text x="60" y="670" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Tu chu dong bat/tat bao mat theo nhu cau</text>
+</svg>
