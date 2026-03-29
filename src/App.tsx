@@ -32,36 +32,44 @@ const benefitCards = [
   },
 ]
 
-const featureCards = [
+const mainFeatureCards = [
   {
-    icon: 'home_storage',
-    title: 'Trang chủ dễ theo dõi',
-    desc: 'Xem nhanh giấy tờ đã ghim, sắp hết hạn, quá hạn và mở lại trong vài giây.',
+    icon: 'folder',
+    title: 'Quản lý giấy tờ của bạn',
+    desc: 'Lưu và sắp xếp giấy tờ cá nhân gọn gàng, mở lại nhanh khi cần.',
   },
   {
-    icon: 'edit_note',
-    title: 'Màn hình thêm/sửa giấy tờ',
-    desc: 'Một nơi để thêm ảnh, PDF, ghi chú, phân loại, ngày hết hạn và sắp xếp trang dễ dàng.',
+    icon: 'manage_search',
+    title: 'Tìm kiếm nhanh giấy tờ',
+    desc: 'Tìm theo tên, phân loại, ghi chú và cả nội dung OCR chỉ trong vài giây.',
   },
   {
-    icon: 'text_search',
-    title: 'Tìm kiếm không dấu',
-    desc: 'Gõ từ khoá theo kiểu tự nhiên, app vẫn tìm được dù bạn không gõ dấu tiếng Việt.',
+    icon: 'share',
+    title: 'Nhanh chóng chia sẻ giấy tờ',
+    desc: 'Gửi giấy tờ cho người thân hoặc đối tác nhanh chóng ngay từ trong app.',
+  },
+]
+
+const supportFeatureCards = [
+  {
+    icon: 'picture_as_pdf',
+    title: 'Tạo PDF từ giấy tờ hoặc ảnh bất kỳ',
+    desc: 'Gộp ảnh thành file PDF gọn gàng, tiện gửi đi hoặc lưu hồ sơ.',
   },
   {
-    icon: 'event_upcoming',
-    title: 'Nhắc hết hạn tự động',
-    desc: 'Bật thông báo để app nhắc trước hạn, tránh quên gia hạn giấy tờ quan trọng.',
+    icon: 'text_snippet',
+    title: 'OCR ảnh/PDF sang văn bản',
+    desc: 'Nhận diện chữ từ ảnh và PDF, hỗ trợ tốt cho tiếng Việt để dễ tìm và sao chép.',
+  },
+  {
+    icon: 'fingerprint',
+    title: 'Mật khẩu và sinh trắc học',
+    desc: 'Bạn có thể đặt mật khẩu truy cập app và mở khoá bằng vân tay/Face ID.',
   },
   {
     icon: 'folder_zip',
-    title: 'Sao lưu và khôi phục',
-    desc: 'Xuất thành file .vgtd, đặt PIN 6 số để bảo vệ, nhập lại khi đổi máy hoặc cần phục hồi.',
-  },
-  {
-    icon: 'delete_sweep',
-    title: 'Thùng rác 30 ngày',
-    desc: 'Lỡ xoá vẫn khôi phục được. Sau 30 ngày app mới xoá vĩnh viễn để giữ máy gọn.',
+    title: 'Sao lưu và khôi phục bằng file',
+    desc: 'Khi cài lại app, bạn cần tạo file backup và khôi phục lại từ file sao lưu đó.',
   },
 ]
 
@@ -336,10 +344,80 @@ function HomePage() {
 
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white">Những gì bạn làm được trong app</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng quan trọng</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {featureCards.map((item) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {mainFeatureCards.map((item) => (
+            <article key={item.title} className="glass-card rounded-3xl p-5 transition-all hover:bg-white/10">
+              <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4">
+                <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+              </div>
+              <h3 className="text-white font-bold text-base">{item.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed mt-2">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <div className="glass-card rounded-3xl p-6 md:p-8 border border-emerald-300/40 shadow-[0_0_40px_rgba(16,185,129,0.25)]">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 border border-emerald-200/30 flex items-center justify-center">
+              <span className="material-symbols-outlined text-emerald-200 text-2xl">verified_user</span>
+            </div>
+            <h2 className="text-2xl font-extrabold tracking-tight text-white">Bảo mật là ưu tiên trên hết</h2>
+          </div>
+          <p className="text-emerald-100 font-semibold text-base leading-relaxed">
+            App chạy 100% offline, không gửi dữ liệu ra ngoài máy bạn, không dùng bất kỳ dịch vụ nào cần kết nối mạng.
+            Bạn có thể yên tâm rằng thông tin giấy tờ cá nhân không bị lộ lọt ra bên ngoài thiết bị.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
+              <p className="text-white font-semibold text-sm">100% offline trên thiết bị</p>
+              <p className="text-white/70 text-xs mt-2">Dữ liệu chỉ lưu trong máy của bạn, không đồng bộ lên cloud.</p>
+            </div>
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
+              <p className="text-white font-semibold text-sm">Không gửi dữ liệu ra ngoài</p>
+              <p className="text-white/70 text-xs mt-2">Không có bên thứ ba nào nhận nội dung giấy tờ của bạn.</p>
+            </div>
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
+              <p className="text-white font-semibold text-sm">Lưu ý khi cài lại app</p>
+              <p className="text-white/70 text-xs mt-2">
+                Trước khi cài lại, hãy xuất file backup. Sau đó khôi phục lại từ file sao lưu để giữ dữ liệu.
+              </p>
+            </div>
+          </div>
+          <div className="rounded-2xl bg-white/10 border border-white/15 p-4 mt-4 flex items-start gap-3">
+            <span className="material-symbols-outlined text-white text-xl mt-0.5">fingerprint</span>
+            <p className="text-white/90 text-sm leading-relaxed">
+              Bạn có thể đặt mật khẩu khi truy cập app và dùng sinh trắc học (vân tay/Face ID) để mở khoá nhanh.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <div className="glass-card rounded-3xl p-6 md:p-8 border border-amber-200/40 shadow-[0_0_32px_rgba(245,158,11,0.2)]">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-2xl bg-amber-400/20 border border-amber-200/30 flex items-center justify-center">
+              <span className="material-symbols-outlined text-amber-100 text-2xl">favorite</span>
+            </div>
+            <h2 className="text-2xl font-extrabold tracking-tight text-white">Tâm thư từ người tạo app</h2>
+          </div>
+          <p className="text-white/90 text-base leading-relaxed italic">
+            "Là một người dùng giống bạn, tôi luôn mong muốn việc quản lý giấy tờ phải thật tiện lợi nhưng vẫn tuyệt
+            đối an toàn. Vì vậy, Ví giấy tờ được xây dựng theo hướng lưu trữ và xử lý offline hoàn toàn, không gửi dữ
+            liệu cho bất kỳ bên nào ngoài thiết bị của bạn, để bạn có thể dùng app với sự yên tâm trọn vẹn."
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng phụ hữu ích</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {supportFeatureCards.map((item) => (
             <article key={item.title} className="glass-card rounded-3xl p-5 transition-all hover:bg-white/10">
               <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4">
                 <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
@@ -371,44 +449,18 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-4 h-auto md:h-[360px] mb-12">
-        <div className="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group">
-          <div className="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
-            <img
-              alt="Privacy background"
-              className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
-              src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80"
-            />
-          </div>
-          <div className="relative z-10">
-            <h4 className="text-2xl font-bold tracking-tight text-white mb-2">Cam kết rõ ràng về quyền riêng tư</h4>
-            <ul className="text-sm text-white/70 space-y-2">
-              {privacyPoints.map((point) => (
-                <li key={point}>• {point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="md:col-span-2 glass-card rounded-3xl p-5 flex items-center gap-5 group transition-all hover:bg-white/10">
-          <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 shadow-md group-hover:rotate-6 transition-transform border border-white/10">
-            <span className="material-symbols-outlined text-white text-3xl">notifications_active</span>
-          </div>
-          <div>
-            <h4 className="font-bold text-lg text-white">Nhắc hạn tự động mỗi ngày</h4>
-            <p className="text-xs text-white/60 leading-relaxed">
-              Khi bật thông báo, app sẽ nhắc theo mốc gần hạn để bạn không bỏ sót giấy tờ quan trọng.
-            </p>
-          </div>
-        </div>
-
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
-          <div className="text-3xl font-extrabold text-white mb-1">30 ngày</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Thùng Rác Khôi Phục</div>
+          <div className="text-3xl font-extrabold text-white mb-1">100%</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Offline Trên Thiết Bị</div>
         </div>
         <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
           <div className="text-3xl font-extrabold text-white mb-1">PIN 6 số</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Mã Hoá Backup</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Bảo Vệ File Backup</div>
+        </div>
+        <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
+          <div className="text-3xl font-extrabold text-white mb-1">OCR</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Hỗ Trợ Tốt Tiếng Việt</div>
         </div>
       </section>
     </main>
