@@ -346,16 +346,23 @@ function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng quan trọng</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {mainFeatureCards.map((item) => (
-            <article key={item.title} className="glass-card rounded-3xl p-5 transition-all hover:bg-white/10">
-              <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4">
-                <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+        <div className="glass-card rounded-3xl p-6 md:p-8">
+          <div className="space-y-4">
+            {mainFeatureCards.map((item, idx) => (
+              <div key={item.title}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-base">{item.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed mt-1">{item.desc}</p>
+                  </div>
+                </div>
+                {idx < mainFeatureCards.length - 1 ? <div className="h-px bg-white/10 mt-4" /> : null}
               </div>
-              <h3 className="text-white font-bold text-base">{item.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed mt-2">{item.desc}</p>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -416,16 +423,18 @@ function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng phụ hữu ích</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {supportFeatureCards.map((item) => (
-            <article key={item.title} className="glass-card rounded-3xl p-5 transition-all hover:bg-white/10">
-              <div className="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-4">
-                <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+        <div className="glass-card rounded-3xl p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+            {supportFeatureCards.map((item) => (
+              <div key={item.title} className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-white text-xl mt-0.5">{item.icon}</span>
+                <div>
+                  <h3 className="text-white font-bold text-base">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed mt-1">{item.desc}</p>
+                </div>
               </div>
-              <h3 className="text-white font-bold text-base">{item.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed mt-2">{item.desc}</p>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -449,18 +458,24 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-        <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
-          <div className="text-3xl font-extrabold text-white mb-1">100%</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Offline Trên Thiết Bị</div>
-        </div>
-        <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
-          <div className="text-3xl font-extrabold text-white mb-1">PIN 6 số</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Bảo Vệ File Backup</div>
-        </div>
-        <div className="glass-card rounded-3xl p-5 flex flex-col justify-center text-center transition-all hover:bg-white/10">
-          <div className="text-3xl font-extrabold text-white mb-1">OCR</div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">Hỗ Trợ Tốt Tiếng Việt</div>
+      <section className="mb-12">
+        <div className="glass-card rounded-3xl p-6 md:p-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <p className="text-3xl font-extrabold text-white">100%</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Offline Trên Thiết Bị</p>
+            </div>
+            <div className="hidden md:block w-px h-14 bg-white/15" />
+            <div>
+              <p className="text-3xl font-extrabold text-white">PIN 6 số</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Bảo Vệ File Backup</p>
+            </div>
+            <div className="hidden md:block w-px h-14 bg-white/15" />
+            <div>
+              <p className="text-3xl font-extrabold text-white">OCR</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Hỗ Trợ Tốt Tiếng Việt</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
