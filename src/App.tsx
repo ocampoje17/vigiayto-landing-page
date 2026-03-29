@@ -462,8 +462,8 @@ function HomePage() {
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
             <div>
-              <p className="text-3xl font-extrabold text-white">PIN 6 số</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Bảo Vệ File Backup</p>
+              <p className="text-3xl font-extrabold text-white">Quản lý giấy tờ</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Nhanh Chóng, Thuận Tiện</p>
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
             <div>
