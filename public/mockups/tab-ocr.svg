@@ -1,0 +1,38 @@
+<svg width="420" height="840" viewBox="0 0 420 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="420" y2="840">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="840" rx="54" fill="url(#bg)"/>
+  <rect x="18" y="18" width="384" height="804" rx="42" fill="#091123"/>
+  <rect x="44" y="56" width="332" height="50" rx="18" fill="#1E293B"/>
+  <text x="90" y="88" fill="#F8FAFC" font-family="Inter,Arial" font-size="18" font-weight="700">Tab Chu (OCR)</text>
+
+  <rect x="44" y="126" width="332" height="126" rx="20" fill="#111827"/>
+  <text x="60" y="158" fill="#93C5FD" font-family="Inter,Arial" font-size="14">Chon nguon OCR</text>
+  <rect x="60" y="174" width="146" height="60" rx="14" fill="#1D4ED8"/>
+  <rect x="214" y="174" width="146" height="60" rx="14" fill="#1D4ED8"/>
+  <text x="96" y="210" fill="#DBEAFE" font-family="Inter,Arial" font-size="13">Anh</text>
+  <text x="286" y="210" fill="#DBEAFE" font-family="Inter,Arial" font-size="13">PDF</text>
+
+  <rect x="44" y="266" width="332" height="146" rx="20" fill="#111827"/>
+  <text x="60" y="298" fill="#93C5FD" font-family="Inter,Arial" font-size="14">Dang xu ly OCR...</text>
+  <rect x="60" y="320" width="300" height="24" rx="8" fill="#1F2937"/>
+  <rect x="60" y="320" width="188" height="24" rx="8" fill="#2563EB"/>
+  <text x="60" y="366" fill="#A7F3D0" font-family="Inter,Arial" font-size="12">Ho tro tot tieng Viet va tim khong dau</text>
+  <text x="60" y="388" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">Che do OCR G / S linh hoat theo nhu cau</text>
+
+  <rect x="44" y="426" width="332" height="302" rx="20" fill="#111827"/>
+  <text x="60" y="458" fill="#93C5FD" font-family="Inter,Arial" font-size="14">Ket qua van ban</text>
+  <rect x="60" y="474" width="300" height="192" rx="12" fill="#1F2937"/>
+  <text x="74" y="500" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">Ho va ten: Nguyen Van A</text>
+  <text x="74" y="522" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">So CCCD: 079200123456</text>
+  <text x="74" y="544" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">Ngay sinh: 12/06/1995</text>
+  <text x="74" y="566" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">Noi cap: Cuc canh sat QLHC</text>
+  <rect x="60" y="676" width="144" height="36" rx="10" fill="#2563EB"/>
+  <rect x="216" y="676" width="144" height="36" rx="10" fill="#22C55E"/>
+  <text x="96" y="699" fill="#DBEAFE" font-family="Inter,Arial" font-size="12" font-weight="700">Sao chep</text>
+  <text x="258" y="699" fill="#052E16" font-family="Inter,Arial" font-size="12" font-weight="700">Luu</text>
+</svg>

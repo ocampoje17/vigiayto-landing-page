@@ -75,34 +75,34 @@ const supportFeatureCards = [
 
 const mockupPages = [
   {
-    title: 'Trang chủ giấy tờ',
-    desc: 'Danh sách giấy tờ, mục đã ghim và thống kê sắp hết hạn.',
+    title: 'Trang chủ',
+    desc: 'Tab Trang chủ: quản lý giấy tờ, ghim nhanh và theo dõi sắp hết hạn.',
     image: `${baseUrl}mockups/home-overview.svg`,
   },
   {
-    title: 'Thêm giấy tờ mới',
-    desc: 'Scan/chụp/chọn ảnh/PDF rồi điền thông tin trong cùng một màn hình.',
-    image: `${baseUrl}mockups/document-wizard.svg`,
-  },
-  {
-    title: 'Tìm kiếm OCR',
-    desc: 'Tìm theo tên, phân loại, ghi chú và chữ nhận diện từ tài liệu.',
+    title: 'Tìm kiếm',
+    desc: 'Tab Tìm kiếm: tìm nhanh theo tên, nhãn, ghi chú và nội dung OCR.',
     image: `${baseUrl}mockups/search-ocr.svg`,
   },
   {
-    title: 'Backup .vgtd',
-    desc: 'Xuất và nhập dữ liệu bằng file sao lưu có mã PIN 6 số.',
-    image: `${baseUrl}mockups/backup-restore.svg`,
+    title: 'Ảnh',
+    desc: 'Tab Ảnh: xem tất cả ảnh giấy tờ và thao tác nhanh trên ảnh.',
+    image: `${baseUrl}mockups/tab-images.svg`,
   },
   {
-    title: 'Bảo mật trong cài đặt',
-    desc: 'Bật mật khẩu, sinh trắc học, chống chụp màn hình và quản lý thông báo.',
+    title: 'Tạo PDF',
+    desc: 'Tab Tạo PDF: chọn ảnh, cấu hình file và xuất/chia sẻ PDF.',
+    image: `${baseUrl}mockups/tab-pdf.svg`,
+  },
+  {
+    title: 'Chữ',
+    desc: 'Tab Chữ: OCR ảnh/PDF sang văn bản, hỗ trợ tốt tiếng Việt.',
+    image: `${baseUrl}mockups/tab-ocr.svg`,
+  },
+  {
+    title: 'Cài đặt',
+    desc: 'Tab Cài đặt: bảo mật, thông báo, sao lưu/khôi phục và tuỳ chỉnh app.',
     image: `${baseUrl}mockups/security-settings.svg`,
-  },
-  {
-    title: 'My Documents cá nhân',
-    desc: 'Lưu ghi chú nhanh kèm ảnh, video, file để tra cứu lại khi cần.',
-    image: `${baseUrl}mockups/my-documents.svg`,
   },
 ]
 
@@ -440,7 +440,7 @@ function HomePage() {
 
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white">Mockup các trang chính</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Mockup các tab chính trên appbar</h2>
         </div>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
           {mockupPages.map((item) => (
