@@ -418,17 +418,19 @@ function HomePage() {
       </section>
 
       <section className="mb-12">
-        <div className="glass-card rounded-3xl p-6 md:p-8 border border-emerald-300/40 shadow-[0_0_40px_rgba(16,185,129,0.25)]">
+        <div className="glass-card rounded-3xl p-6 md:p-8 border border-white/20 bg-zinc-950/35">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 border border-emerald-200/30 flex items-center justify-center">
-              <span className="material-symbols-outlined text-emerald-200 text-2xl">verified_user</span>
+            <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center">
+              <span className="material-symbols-outlined text-white text-2xl">verified_user</span>
             </div>
             <h2 className="text-2xl font-extrabold tracking-tight text-white">Bảo mật là ưu tiên trên hết</h2>
           </div>
-          <p className="text-emerald-100 font-semibold text-base leading-relaxed">
-            App chạy 100% offline, không gửi dữ liệu ra ngoài máy bạn, không dùng bất kỳ dịch vụ nào cần kết nối mạng.
-            Bạn có thể yên tâm rằng thông tin giấy tờ cá nhân không bị lộ lọt ra bên ngoài thiết bị.
-          </p>
+          <div className="rounded-2xl bg-black/25 border border-white/10 p-4">
+            <p className="text-white font-semibold text-base leading-relaxed">
+              App chạy 100% offline, không gửi dữ liệu ra ngoài máy bạn, không dùng bất kỳ dịch vụ nào cần kết nối
+              mạng. Bạn có thể yên tâm rằng thông tin giấy tờ cá nhân không bị lộ lọt ra bên ngoài thiết bị.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
             <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
               <p className="text-white font-semibold text-sm">100% offline trên thiết bị</p>
