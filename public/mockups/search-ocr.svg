@@ -1,33 +1,17 @@
 <svg width="420" height="840" viewBox="0 0 420 840" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="420" y2="840">
-      <stop stop-color="#0F766E"/>
-      <stop offset="1" stop-color="#2563EB"/>
-    </linearGradient>
-  </defs>
-  <rect width="420" height="840" rx="54" fill="url(#bg)"/>
-  <rect x="18" y="18" width="384" height="804" rx="42" fill="#0A1220"/>
-  <rect x="44" y="56" width="332" height="50" rx="18" fill="#1E293B"/>
-  <text x="66" y="88" fill="#F8FAFC" font-family="Inter,Arial" font-size="18" font-weight="700">Tim kiem</text>
-  <rect x="44" y="126" width="332" height="52" rx="16" fill="#111827"/>
-  <text x="62" y="157" fill="#9CA3AF" font-family="Inter,Arial" font-size="14">tim cccd nguyen van a</text>
-  <rect x="44" y="194" width="162" height="42" rx="14" fill="#1E40AF"/>
-  <rect x="214" y="194" width="162" height="42" rx="14" fill="#0F172A"/>
-  <text x="95" y="220" fill="#DBEAFE" font-family="Inter,Arial" font-size="13" font-weight="700">Co ban</text>
-  <text x="265" y="220" fill="#9CA3AF" font-family="Inter,Arial" font-size="13" font-weight="700">Chi tiet</text>
-  <rect x="44" y="252" width="332" height="130" rx="20" fill="#111827"/>
-  <text x="60" y="284" fill="#F8FAFC" font-family="Inter,Arial" font-size="15" font-weight="700">CCCD Nguyen Van A</text>
-  <text x="60" y="306" fill="#22D3EE" font-family="Inter,Arial" font-size="12">Khop: Ten giay to, Noi dung OCR</text>
-  <rect x="60" y="322" width="300" height="40" rx="10" fill="#1F2937"/>
-  <text x="70" y="347" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">So: 0792 00 123456 | Noi cap: Ha Noi</text>
-  <rect x="44" y="398" width="332" height="130" rx="20" fill="#111827"/>
-  <text x="60" y="430" fill="#F8FAFC" font-family="Inter,Arial" font-size="15" font-weight="700">Bang lai xe B2</text>
-  <text x="60" y="452" fill="#22D3EE" font-family="Inter,Arial" font-size="12">Khop: Ghi chu</text>
-  <rect x="60" y="468" width="300" height="40" rx="10" fill="#1F2937"/>
-  <text x="70" y="493" fill="#E5E7EB" font-family="Inter,Arial" font-size="12">Dang ky doi bang truoc ngay 01/08/2026</text>
-  <rect x="44" y="546" width="332" height="194" rx="20" fill="#111827"/>
-  <text x="60" y="578" fill="#F8FAFC" font-family="Inter,Arial" font-size="15" font-weight="700">Meo tim nhanh</text>
-  <text x="60" y="607" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Co the tim khong dau tieng Viet</text>
-  <text x="60" y="632" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Tim theo ten, nhan, ghi chu, OCR</text>
-  <text x="60" y="657" fill="#A7F3D0" font-family="Inter,Arial" font-size="13">- Bam vao ket qua de mo giay to ngay</text>
+  <rect width="420" height="840" rx="54" fill="#1E293B"/>
+  <rect x="18" y="18" width="384" height="804" rx="42" fill="#0F172A"/>
+  <rect x="44" y="56" width="332" height="52" rx="16" fill="#1F2937"/>
+  <text x="66" y="88" fill="#E5E7EB" font-family="Inter,Arial" font-size="16" font-weight="700">Tim kiem</text>
+
+  <rect x="44" y="128" width="332" height="52" rx="14" fill="#1F2937"/>
+  <text x="62" y="160" fill="#94A3B8" font-family="Inter,Arial" font-size="12">Nhap tu khoa...</text>
+
+  <rect x="44" y="200" width="332" height="120" rx="16" fill="#1F2937"/>
+  <rect x="44" y="334" width="332" height="120" rx="16" fill="#1F2937"/>
+  <rect x="44" y="468" width="332" height="120" rx="16" fill="#1F2937"/>
+
+  <text x="62" y="236" fill="#E5E7EB" font-family="Inter,Arial" font-size="13">Ket qua 1</text>
+  <text x="62" y="370" fill="#E5E7EB" font-family="Inter,Arial" font-size="13">Ket qua 2</text>
+  <text x="62" y="504" fill="#E5E7EB" font-family="Inter,Arial" font-size="13">Ket qua 3</text>
 </svg>
