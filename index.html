@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="light" lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/app-logo.png" />
+    <meta
+      name="description"
+      content="Ví giấy tờ giúp bạn lưu và quản lý giấy tờ cá nhân đơn giản, dễ hiểu cho mọi người."
+    />
+    <title>Ví Giấy Tờ - The Digital Archivist</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary-fixed-dim': '#d6d3d7',
+              'error-container': '#ff8b9a',
+              'primary-dim': '#535255',
+              'surface-container': '#ebeef0',
+              'tertiary-container': '#f5f3f6',
+              'on-secondary-fixed': '#3e3f47',
+              'surface-container-high': '#e4e9ec',
+              'inverse-surface': '#0c0e0f',
+              'on-background': '#2d3336',
+              'primary-fixed': '#e4e1e6',
+              'on-error-container': '#782232',
+              'surface-dim': '#d3dbdf',
+              'on-secondary': '#faf8ff',
+              'secondary-fixed-dim': '#d4d3dd',
+              'on-surface-variant': '#5a6063',
+              'error-dim': '#4f0116',
+              primary: '#5f5e61',
+              'inverse-primary': '#f9f5fa',
+              'on-primary': '#faf7fb',
+              'on-primary-fixed-variant': '#5c5b5e',
+              'surface-bright': '#f9f9fa',
+              'on-error': '#fff7f7',
+              'on-tertiary-fixed-variant': '#666669',
+              'on-primary-container': '#525155',
+              'primary-container': '#e4e1e6',
+              outline: '#757c7f',
+              'on-secondary-fixed-variant': '#5a5b63',
+              background: '#f9f9fa',
+              'surface-variant': '#dde3e7',
+              'on-secondary-container': '#515159',
+              surface: '#f9f9fa',
+              'secondary-container': '#e3e1ec',
+              'surface-container-lowest': '#ffffff',
+              'tertiary-dim': '#535356',
+              'outline-variant': '#adb3b6',
+              'surface-container-highest': '#dde3e7',
+              secondary: '#5e5e67',
+              'surface-container-low': '#f2f4f5',
+              'tertiary-fixed-dim': '#e7e4e8',
+              'on-tertiary': '#fbf8fc',
+              'inverse-on-surface': '#9c9d9e',
+              'on-primary-fixed': '#3f3f42',
+              tertiary: '#5f5f62',
+              'on-tertiary-container': '#5c5b5f',
+              'tertiary-fixed': '#f5f3f6',
+              'surface-tint': '#5f5e61',
+              'on-tertiary-fixed': '#4a494c',
+              'on-surface': '#2d3336',
+              'secondary-dim': '#52525b',
+              'secondary-fixed': '#e3e1ec',
+              error: '#9e3f4e',
+            },
+            fontFamily: {
+              headline: ['Inter'],
+              body: ['Inter'],
+              label: ['Inter'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
