@@ -76,32 +76,32 @@ const supportFeatureCards = [
 const mockupPages = [
   {
     title: 'Trang chủ',
-    desc: 'Tab Trang chủ: quản lý giấy tờ, ghim nhanh và theo dõi sắp hết hạn.',
+    desc: 'Quản lý toàn bộ giấy tờ trong một nơi, xem nhanh mục đã ghim, giấy tờ sắp hết hạn và mở lại ngay khi cần dùng.',
     image: `${baseUrl}mockups/home-overview.svg`,
   },
   {
     title: 'Tìm kiếm',
-    desc: 'Tab Tìm kiếm: tìm nhanh theo tên, nhãn, ghi chú và nội dung OCR.',
+    desc: 'Tìm theo tên giấy tờ, nhãn, ghi chú và nội dung OCR. Hỗ trợ tìm không dấu để người dùng phổ thông tra cứu dễ hơn.',
     image: `${baseUrl}mockups/search-ocr.svg`,
   },
   {
     title: 'Ảnh',
-    desc: 'Tab Ảnh: xem tất cả ảnh giấy tờ và thao tác nhanh trên ảnh.',
+    desc: 'Xem toàn bộ ảnh giấy tờ theo dạng thư viện, mở nhanh từng ảnh để đối chiếu thông tin hoặc chuyển sang PDF khi cần.',
     image: `${baseUrl}mockups/tab-images.svg`,
   },
   {
     title: 'Tạo PDF',
-    desc: 'Tab Tạo PDF: chọn ảnh, cấu hình file và xuất/chia sẻ PDF.',
+    desc: 'Chọn ảnh bất kỳ để tạo file PDF gọn gàng, có cấu hình cơ bản trước khi xuất và chia sẻ ngay trong vài thao tác.',
     image: `${baseUrl}mockups/tab-pdf.svg`,
   },
   {
     title: 'Chữ',
-    desc: 'Tab Chữ: OCR ảnh/PDF sang văn bản, hỗ trợ tốt tiếng Việt.',
+    desc: 'OCR chuyển ảnh và PDF sang văn bản để sao chép hoặc tìm kiếm lại. Tối ưu tốt cho tiếng Việt và giấy tờ thông dụng.',
     image: `${baseUrl}mockups/tab-ocr.svg`,
   },
   {
     title: 'Cài đặt',
-    desc: 'Tab Cài đặt: bảo mật, thông báo, sao lưu/khôi phục và tuỳ chỉnh app.',
+    desc: 'Quản lý bảo mật, thông báo, sao lưu/khôi phục và các tùy chọn cá nhân để bạn chủ động kiểm soát dữ liệu của mình.',
     image: `${baseUrl}mockups/security-settings.svg`,
   },
 ]
@@ -440,19 +440,19 @@ function HomePage() {
 
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white">Mockup các tab chính trên appbar</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng chính của app</h2>
         </div>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
           {mockupPages.map((item) => (
-            <article className="flex-none w-[280px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
+            <article className="flex-none w-[360px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
               <img
                 src={item.image}
                 alt={`Mockup ${item.title}`}
-                className="w-full h-[520px] object-cover rounded-[1.8rem] border border-white/10 shadow-2xl"
+                className="w-full h-[250px] object-contain rounded-2xl border border-white/10 shadow-2xl bg-slate-900/40 p-1"
                 loading="lazy"
               />
               <h3 className="text-base font-bold text-white mt-4">{item.title}</h3>
-              <p className="text-xs text-white/60 mt-2 leading-relaxed">{item.desc}</p>
+              <p className="text-sm text-white/70 mt-2 leading-relaxed">{item.desc}</p>
             </article>
           ))}
         </div>
