@@ -147,12 +147,12 @@ function AppLayout({ children }: { children: ReactNode }) {
         src="https://lh3.googleusercontent.com/aida/ADBb0ui2W5Dal8bjOUvcTN6Pnqy3jD6M_jUdrIj848qA38d-bMxhLyz1Y1MiW3vE3hljCvtfsZ4GdVHngyzwosPGpfuSdc59TUrd2TajD9His6X4fV3g2v_8BKUdZzOPZcgjUedq7Sqzd8pnpZBfhOUmN939qTGUH2dJIlTGK0esWspiektAO9kIxXAkYAGjA0Vm4P10icIH19hzDGqI1VWis7d_1jz09yuZhJeCUqsAL64bpNaddBv-d7HgqG1_00ZIxFjs0TyZm-Cv"
       />
 
-      <header className="fixed top-4 left-0 right-0 z-50 px-6">
-        <nav className="max-w-7xl mx-auto bg-zinc-950/40 backdrop-blur-xl border border-white/10 shadow-2xl rounded-full px-6 h-14 flex items-center justify-between font-sans antialiased tracking-tight">
+      <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:top-4 sm:px-6">
+        <nav className="max-w-7xl mx-auto bg-zinc-950/40 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl sm:rounded-full px-3 sm:px-6 h-12 sm:h-14 flex items-center justify-between font-sans antialiased tracking-tight">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 shrink-0">
-              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-8 h-8 rounded-lg" />
-              <span className="text-xl font-bold tracking-tighter text-zinc-50">Ví Giấy Tờ</span>
+            <div className="flex items-center gap-2 shrink-0 min-w-0">
+              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg" />
+              <span className="text-base sm:text-xl font-bold tracking-tighter text-zinc-50 truncate">Ví Giấy Tờ</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <NavLink
@@ -198,10 +198,10 @@ function AppLayout({ children }: { children: ReactNode }) {
               </NavLink>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               type="button"
-              className="p-1.5 hover:bg-zinc-800/50 rounded-full transition-all active:scale-95 duration-200 flex items-center justify-center"
+              className="w-8 h-8 sm:w-auto sm:h-auto p-1.5 hover:bg-zinc-800/50 rounded-full transition-all active:scale-95 duration-200 flex items-center justify-center shrink-0"
               onClick={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}
               aria-label="Đổi giao diện sáng/tối"
             >
@@ -213,18 +213,74 @@ function AppLayout({ children }: { children: ReactNode }) {
               href="https://play.google.com/store/apps/details?id=com.vigiayto.placeholder"
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-indigo-950 px-5 py-1.5 rounded-full text-sm font-bold hover:bg-zinc-100 transition-all active:scale-95 duration-200 shadow-sm"
+              className="bg-white text-indigo-950 px-3 sm:px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold hover:bg-zinc-100 transition-all active:scale-95 duration-200 shadow-sm shrink-0"
             >
-              Tải trên Play Store
+              <span className="sm:hidden">Play Store</span>
+              <span className="hidden sm:inline">Tải trên Play Store</span>
             </a>
           </div>
         </nav>
+        <div className="md:hidden mt-2">
+          <div className="max-w-7xl mx-auto overflow-x-auto hide-scrollbar">
+            <div className="flex items-center gap-2 px-1">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `whitespace-nowrap text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                    isActive
+                      ? 'text-zinc-50 border-zinc-50 bg-white/10'
+                      : 'text-zinc-300 border-white/20 hover:text-zinc-50'
+                  }`
+                }
+                end
+              >
+                Trang chủ
+              </NavLink>
+              <NavLink
+                to="/quyen-rieng-tu"
+                className={({ isActive }) =>
+                  `whitespace-nowrap text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                    isActive
+                      ? 'text-zinc-50 border-zinc-50 bg-white/10'
+                      : 'text-zinc-300 border-white/20 hover:text-zinc-50'
+                  }`
+                }
+              >
+                Quyền riêng tư
+              </NavLink>
+              <NavLink
+                to="/dieu-khoan-su-dung"
+                className={({ isActive }) =>
+                  `whitespace-nowrap text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                    isActive
+                      ? 'text-zinc-50 border-zinc-50 bg-white/10'
+                      : 'text-zinc-300 border-white/20 hover:text-zinc-50'
+                  }`
+                }
+              >
+                Điều khoản
+              </NavLink>
+              <NavLink
+                to="/lien-he"
+                className={({ isActive }) =>
+                  `whitespace-nowrap text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                    isActive
+                      ? 'text-zinc-50 border-zinc-50 bg-white/10'
+                      : 'text-zinc-300 border-white/20 hover:text-zinc-50'
+                  }`
+                }
+              >
+                Liên hệ
+              </NavLink>
+            </div>
+          </div>
+        </div>
       </header>
 
       {children}
 
-      <footer className="w-full py-12 bg-zinc-950/20 backdrop-blur-xl border-t border-white/5 relative z-10 mt-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <footer className="w-full py-10 sm:py-12 bg-zinc-950/20 backdrop-blur-xl border-t border-white/5 relative z-10 mt-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
           <div className="flex flex-col gap-4">
             <span className="text-xl font-bold text-zinc-50">Ví Giấy Tờ</span>
             <p className="text-xs font-normal leading-relaxed text-zinc-400 max-w-[260px]">
@@ -233,7 +289,7 @@ function AppLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="flex flex-col gap-4">
             <span className="text-[11px] font-bold text-zinc-50 uppercase tracking-[0.2em]">Pháp lý</span>
-            <nav className="flex items-center gap-4">
+            <nav className="flex items-center flex-wrap gap-3">
               <Link className="text-xs text-zinc-400 hover:text-zinc-50 transition-all" to="/quyen-rieng-tu">
                 Quyền riêng tư
               </Link>
@@ -271,14 +327,14 @@ function AppLayout({ children }: { children: ReactNode }) {
 
 function HomePage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-24 relative z-10">
-      <section className="relative overflow-hidden rounded-[2.5rem] hero-glass p-6 md:p-12 mb-8 shadow-2xl">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
+      <section className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem] hero-glass p-5 sm:p-6 md:p-12 mb-8 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl text-center md:text-left">
             <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
               Ví giấy tờ cho mọi người
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.1] mb-5 sm:mb-6">
               Lưu giấy tờ gọn gàng, <br />
               tìm lại cực nhanh.
             </h1>
@@ -286,29 +342,29 @@ function HomePage() {
               Từ CCCD, bằng lái đến hồ sơ cá nhân, bạn có thể quản lý ngay trên điện thoại.
               Dễ dùng cho người phổ thông, thao tác rõ ràng, không rối.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
               <a
                 href="https://play.google.com/store/apps/details?id=com.vigiayto.placeholder"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-indigo-900 px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/10 active:scale-95 transition-all"
+                className="bg-white text-indigo-900 px-5 sm:px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/10 active:scale-95 transition-all"
               >
                 <span className="material-symbols-outlined text-xl">android</span>
                 Tải cho Android
               </a>
               <Link
                 to="/quyen-rieng-tu"
-                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 active:scale-95 transition-all"
+                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-5 sm:px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 active:scale-95 transition-all"
               >
                 Xem cam kết riêng tư
               </Link>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center">
+          <div className="relative w-full max-w-[250px] sm:max-w-[320px] aspect-square flex items-center justify-center">
             <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-[80px] animate-pulse" />
-            <div className="relative bg-white/5 backdrop-blur-2xl p-12 rounded-[3rem] rotate-12 shadow-2xl border border-white/10">
-              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-[120px] h-[120px] rounded-[28px] object-cover" />
+            <div className="relative bg-white/5 backdrop-blur-2xl p-8 sm:p-12 rounded-[2.25rem] sm:rounded-[3rem] rotate-12 shadow-2xl border border-white/10">
+              <img src={appLogoUrl} alt="Logo Ví Giấy Tờ" className="w-[96px] h-[96px] sm:w-[120px] sm:h-[120px] rounded-[22px] sm:rounded-[28px] object-cover" />
             </div>
             <div className="absolute -top-4 -right-2 bg-white/10 backdrop-blur-xl p-4 rounded-2xl -rotate-12 shadow-lg border border-white/20">
               <span className="material-symbols-outlined text-white/80 text-xl">lock</span>
@@ -439,11 +495,11 @@ function HomePage() {
         </div>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
           {mockupPages.map((item) => (
-            <article className="flex-none w-[360px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
+            <article className="flex-none w-[300px] sm:w-[340px] md:w-[360px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
               <img
                 src={item.image}
                 alt={`Mockup ${item.title}`}
-                className="w-full h-[250px] object-contain rounded-2xl border border-white/10 shadow-2xl bg-slate-900/40 p-1"
+                className="w-full h-[200px] sm:h-[230px] md:h-[250px] object-contain rounded-2xl border border-white/10 shadow-2xl bg-slate-900/40 p-1"
                 loading="lazy"
               />
               <h3 className="text-base font-bold text-white mt-4">{item.title}</h3>
@@ -479,7 +535,7 @@ function HomePage() {
 
 function TermsPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Điều khoản sử dụng
@@ -529,7 +585,7 @@ function TermsPage() {
 
 function PrivacyPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Quyền riêng tư
@@ -579,7 +635,7 @@ function PrivacyPage() {
 
 function ContactPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-6">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Liên hệ
