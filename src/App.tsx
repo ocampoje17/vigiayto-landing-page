@@ -468,7 +468,7 @@ function HomePage() {
             <div className="hidden md:block w-px h-14 bg-white/15" />
             <div>
               <p className="text-3xl font-extrabold text-white">OCR</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Hỗ Trợ Tốt Tiếng Việt</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Hỗ Trợ Chính Ngôn Ngữ Tiếng Việt</p>
             </div>
           </div>
         </div>
