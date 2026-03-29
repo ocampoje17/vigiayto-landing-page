@@ -14,20 +14,20 @@ const privacyPoints = [
 const benefitCards = [
   {
     icon: 'add_a_photo',
-    title: 'Thêm giấy tờ theo cách bạn quen',
-    desc: 'Chụp ảnh, scan thông minh, chọn từ thư viện hoặc đính kèm PDF đều được.',
+    title: 'Lưu giấy tờ theo cách quen thuộc',
+    desc: 'Chụp ảnh, quét nhanh, chọn từ thư viện hoặc đính kèm PDF đều dễ làm.',
     tone: 'bg-indigo-500/20 text-indigo-300',
   },
   {
     icon: 'manage_search',
-    title: 'Tìm lại cực nhanh',
+    title: 'Tìm lại trong vài giây',
     desc: 'Tìm theo tên, phân loại, ghi chú và cả chữ trong ảnh/PDF sau khi app nhận diện.',
     tone: 'bg-violet-500/20 text-violet-300',
   },
   {
     icon: 'shield_lock',
-    title: 'Riêng tư và an toàn',
-    desc: 'Khóa app bằng mật khẩu, vân tay/Face ID, chống chụp màn hình và lưu dữ liệu offline.',
+    title: 'Riêng tư là mặc định',
+    desc: 'Khóa app bằng mật khẩu, vân tay/Face ID và lưu dữ liệu hoàn toàn offline.',
     tone: 'bg-emerald-500/20 text-emerald-300',
   },
 ]
@@ -35,18 +35,33 @@ const benefitCards = [
 const mainFeatureCards = [
   {
     icon: 'folder',
-    title: 'Quản lý giấy tờ của bạn',
-    desc: 'Lưu và sắp xếp giấy tờ cá nhân gọn gàng, mở lại nhanh khi cần.',
+    bgIcon: 'inventory_2',
+    title: 'Quản lý giấy tờ gọn gàng',
+    desc: 'Lưu và sắp xếp giấy tờ cá nhân rõ ràng để mở lại nhanh khi cần.',
+    iconTone: 'text-sky-100',
+    iconBg: 'bg-sky-400/20 border-sky-200/40',
+    cardTone: 'from-sky-500/30 via-indigo-500/20 to-transparent',
+    glowTone: 'bg-sky-400/35',
   },
   {
     icon: 'manage_search',
+    bgIcon: 'travel_explore',
     title: 'Tìm kiếm nhanh giấy tờ',
-    desc: 'Tìm theo tên, phân loại, ghi chú và cả nội dung OCR chỉ trong vài giây.',
+    desc: 'Tìm theo tên, phân loại, ghi chú hoặc nội dung OCR chỉ trong vài giây.',
+    iconTone: 'text-violet-100',
+    iconBg: 'bg-violet-400/20 border-violet-200/40',
+    cardTone: 'from-violet-500/30 via-fuchsia-500/20 to-transparent',
+    glowTone: 'bg-violet-400/35',
   },
   {
     icon: 'share',
-    title: 'Nhanh chóng chia sẻ giấy tờ',
-    desc: 'Gửi giấy tờ cho người thân hoặc đối tác nhanh chóng ngay từ trong app.',
+    bgIcon: 'forward_to_inbox',
+    title: 'Chia sẻ giấy tờ khi cần',
+    desc: 'Gửi giấy tờ cho người thân hoặc đối tác ngay từ trong app, rất nhanh và rõ ràng.',
+    iconTone: 'text-emerald-100',
+    iconBg: 'bg-emerald-400/20 border-emerald-200/40',
+    cardTone: 'from-emerald-500/30 via-teal-500/20 to-transparent',
+    glowTone: 'bg-emerald-400/35',
   },
 ]
 
@@ -54,12 +69,12 @@ const supportFeatureCards = [
   {
     icon: 'picture_as_pdf',
     title: 'Tạo PDF từ giấy tờ hoặc ảnh bất kỳ',
-    desc: 'Gộp ảnh thành file PDF gọn gàng, tiện gửi đi hoặc lưu hồ sơ.',
+    desc: 'Gộp ảnh thành file PDF gọn gàng để lưu hồ sơ hoặc gửi đi khi cần.',
   },
   {
     icon: 'text_snippet',
     title: 'OCR ảnh/PDF sang văn bản',
-    desc: 'Nhận diện chữ từ ảnh và PDF, hỗ trợ tốt cho tiếng Việt để dễ tìm và sao chép.',
+    desc: 'Nhận diện chữ từ ảnh và PDF để bạn dễ tìm lại, sao chép và đọc nội dung.',
   },
   {
     icon: 'fingerprint',
@@ -70,33 +85,33 @@ const supportFeatureCards = [
 
 const mockupPages = [
   {
-    title: 'Trang chủ',
-    desc: 'Quản lý toàn bộ giấy tờ trong một nơi, xem nhanh mục đã ghim, giấy tờ sắp hết hạn và mở lại ngay khi cần dùng.',
+    title: 'Trang tổng quan',
+    desc: 'Xem nhanh toàn bộ giấy tờ trong một nơi, kèm mục đã ghim và giấy tờ sắp hết hạn.',
     image: `${baseUrl}mockups/home-overview.svg`,
   },
   {
     title: 'Tìm kiếm',
-    desc: 'Tìm theo tên giấy tờ, nhãn, ghi chú và nội dung OCR. Hỗ trợ tìm không dấu để người dùng phổ thông tra cứu dễ hơn.',
+    desc: 'Tìm theo tên, nhãn, ghi chú hoặc nội dung OCR để mở lại giấy tờ chỉ trong vài giây.',
     image: `${baseUrl}mockups/search-ocr.svg`,
   },
   {
-    title: 'Ảnh',
-    desc: 'Xem toàn bộ ảnh giấy tờ theo dạng thư viện, mở nhanh từng ảnh để đối chiếu thông tin hoặc chuyển sang PDF khi cần.',
+    title: 'Ảnh giấy tờ',
+    desc: 'Xem giấy tờ theo dạng thư viện ảnh, mở nhanh từng ảnh để đối chiếu hoặc chuyển sang PDF.',
     image: `${baseUrl}mockups/tab-images.svg`,
   },
   {
-    title: 'Tạo PDF',
-    desc: 'Chọn ảnh bất kỳ để tạo file PDF gọn gàng, có cấu hình cơ bản trước khi xuất và chia sẻ ngay trong vài thao tác.',
+    title: 'Xuất PDF',
+    desc: 'Chọn ảnh bất kỳ để ghép thành file PDF gọn gàng, tiện lưu trữ và chia sẻ.',
     image: `${baseUrl}mockups/tab-pdf.svg`,
   },
   {
-    title: 'Chữ',
-    desc: 'OCR chuyển ảnh và PDF sang văn bản để sao chép hoặc tìm kiếm lại. Tối ưu tốt cho tiếng Việt và giấy tờ thông dụng.',
+    title: 'OCR tiếng Việt',
+    desc: 'Chuyển ảnh và PDF sang văn bản để sao chép, tìm kiếm lại và đọc nội dung dễ hơn.',
     image: `${baseUrl}mockups/tab-ocr.svg`,
   },
   {
     title: 'Cài đặt',
-    desc: 'Quản lý bảo mật, thông báo, sao lưu/khôi phục và các tùy chọn cá nhân để bạn chủ động kiểm soát dữ liệu của mình.',
+    desc: 'Quản lý mật khẩu, sinh trắc học, sao lưu và các tùy chọn riêng tư của ứng dụng.',
     image: `${baseUrl}mockups/security-settings.svg`,
   },
 ]
@@ -280,11 +295,11 @@ function AppLayout({ children }: { children: ReactNode }) {
       {children}
 
       <footer className="w-full py-10 sm:py-12 bg-zinc-950/20 backdrop-blur-xl border-t border-white/5 relative z-10 mt-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-7 md:gap-12">
           <div className="flex flex-col gap-4">
             <span className="text-xl font-bold text-zinc-50">Ví Giấy Tờ</span>
             <p className="text-xs font-normal leading-relaxed text-zinc-400 max-w-[260px]">
-              © 2026 Ví Giấy Tờ. The Digital Archivist. Built for privacy and security.
+              © 2026 Ví Giấy Tờ. Lưu giấy tờ an toàn, dễ dùng mỗi ngày.
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -327,7 +342,7 @@ function AppLayout({ children }: { children: ReactNode }) {
 
 function HomePage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
       <section className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem] hero-glass p-5 sm:p-6 md:p-12 mb-8 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl text-center md:text-left">
@@ -340,7 +355,7 @@ function HomePage() {
             </h1>
             <p className="text-base md:text-lg text-white/70 font-light max-w-md mb-8 leading-relaxed">
               Từ CCCD, bằng lái đến hồ sơ cá nhân, bạn có thể quản lý ngay trên điện thoại.
-              Dễ dùng cho người phổ thông, thao tác rõ ràng, không rối.
+              Dễ dùng cho người phổ thông, thao tác rõ ràng, không rối. Ứng dụng hoàn toàn miễn phí.
             </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
               <a
@@ -356,7 +371,7 @@ function HomePage() {
                 to="/quyen-rieng-tu"
                 className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-5 sm:px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 active:scale-95 transition-all"
               >
-                Xem cam kết riêng tư
+                Xem cam kết bảo mật 100% offline
               </Link>
             </div>
           </div>
@@ -394,64 +409,74 @@ function HomePage() {
       </section>
 
       <section className="mb-12">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-end justify-between mb-6">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng quan trọng</h2>
+          <p className="hidden md:block text-sm text-white/70">3 việc quan trọng nhất bạn dùng hằng ngày</p>
         </div>
-        <div className="glass-card rounded-3xl p-6 md:p-8">
-          <div className="space-y-4">
-            {mainFeatureCards.map((item, idx) => (
-              <div key={item.title}>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-white text-xl">{item.icon}</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+          {mainFeatureCards.map((item, idx) => (
+            <article
+              key={item.title}
+              className={`group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-gradient-to-br ${item.cardTone} glass-card p-5 sm:p-6 min-h-[205px] sm:min-h-[220px] hover:-translate-y-1 transition-all duration-300`}
+            >
+              <div className={`absolute -top-14 -right-14 h-36 w-36 rounded-full blur-3xl ${item.glowTone}`} />
+              <span className="material-symbols-outlined absolute -right-4 -bottom-5 text-[110px] text-white/[0.08] select-none pointer-events-none">
+                {item.bgIcon}
+              </span>
+
+              <div className="relative z-10">
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div className={`w-11 h-11 rounded-2xl border flex items-center justify-center ${item.iconBg}`}>
+                    <span className={`material-symbols-outlined text-xl ${item.iconTone}`}>{item.icon}</span>
                   </div>
-                  <div>
-                    <h3 className="text-white font-bold text-base">{item.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed mt-1">{item.desc}</p>
-                  </div>
+                  <span className="text-[11px] font-semibold tracking-wide text-white/60">0{idx + 1}</span>
                 </div>
-                {idx < mainFeatureCards.length - 1 ? <div className="h-px bg-white/10 mt-4" /> : null}
+
+                <h3 className="text-white font-extrabold text-lg leading-tight">{item.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed mt-2 max-w-[36ch]">{item.desc}</p>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="mb-12">
-        <div className="glass-card rounded-3xl p-6 md:p-8 border border-white/20 bg-zinc-950/35">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center">
-              <span className="material-symbols-outlined text-white text-2xl">verified_user</span>
+        <div className="security-priority-card glass-card rounded-3xl p-6 md:p-8 border border-white/20">
+          <div className="security-content">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="security-icon-box w-12 h-12 rounded-2xl border flex items-center justify-center">
+                <span className="material-symbols-outlined text-white text-2xl">verified_user</span>
+              </div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-white">Bảo mật là ưu tiên trên hết</h2>
             </div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-white">Bảo mật là ưu tiên trên hết</h2>
-          </div>
-          <div className="rounded-2xl bg-black/25 border border-white/10 p-4">
-            <p className="text-white font-semibold text-base leading-relaxed">
-              App chạy 100% offline, không gửi dữ liệu ra ngoài máy bạn, không dùng bất kỳ dịch vụ nào cần kết nối
-              mạng. Bạn có thể yên tâm rằng thông tin giấy tờ cá nhân không bị lộ lọt ra bên ngoài thiết bị.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
-            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
-              <p className="text-white font-semibold text-sm">100% offline trên thiết bị</p>
-              <p className="text-white/70 text-xs mt-2">Dữ liệu chỉ lưu trong máy của bạn, không đồng bộ lên cloud.</p>
-            </div>
-            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
-              <p className="text-white font-semibold text-sm">Không gửi dữ liệu ra ngoài</p>
-              <p className="text-white/70 text-xs mt-2">Không có bên thứ ba nào nhận nội dung giấy tờ của bạn.</p>
-            </div>
-            <div className="rounded-2xl bg-black/20 border border-white/10 p-4">
-              <p className="text-white font-semibold text-sm">Lưu ý khi cài lại app</p>
-              <p className="text-white/70 text-xs mt-2">
-                Trước khi cài lại, hãy xuất file backup. Sau đó khôi phục lại từ file sao lưu để giữ dữ liệu.
+            <div className="security-highlight rounded-2xl p-4">
+              <p className="text-white font-semibold text-base leading-relaxed">
+                Ví Giấy Tờ chạy 100% offline. Dữ liệu chỉ nằm trên máy bạn, không gửi ra ngoài và không qua bất kỳ
+                dịch vụ nào cần kết nối mạng.
               </p>
             </div>
-          </div>
-          <div className="rounded-2xl bg-white/10 border border-white/15 p-4 mt-4 flex items-start gap-3">
-            <span className="material-symbols-outlined text-white text-xl mt-0.5">fingerprint</span>
-            <p className="text-white/90 text-sm leading-relaxed">
-              Bạn có thể đặt mật khẩu khi truy cập app và dùng sinh trắc học (vân tay/Face ID) để mở khoá nhanh.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+              <div className="security-fact rounded-2xl p-4">
+                <p className="text-white font-semibold text-sm">Dữ liệu ở trên máy bạn</p>
+                <p className="text-white/70 text-xs mt-2">Thông tin giấy tờ không rời khỏi thiết bị của bạn.</p>
+              </div>
+              <div className="security-fact rounded-2xl p-4">
+                <p className="text-white font-semibold text-sm">Không có đồng bộ đám mây</p>
+                <p className="text-white/70 text-xs mt-2">App không phụ thuộc dịch vụ online hay tài khoản bên ngoài.</p>
+              </div>
+              <div className="security-fact rounded-2xl p-4">
+                <p className="text-white font-semibold text-sm">Cần sao lưu trước khi cài lại</p>
+                <p className="text-white/70 text-xs mt-2">
+                  Khi cài lại app, hãy xuất file backup trước để giữ dữ liệu an toàn.
+                </p>
+              </div>
+            </div>
+            <div className="security-access rounded-2xl p-4 mt-4 flex items-start gap-3">
+              <span className="material-symbols-outlined text-white text-xl mt-0.5">fingerprint</span>
+              <p className="text-white/90 text-sm leading-relaxed">
+                Bạn có thể đặt mật khẩu và mở khóa bằng vân tay/Face ID để vào app nhanh hơn.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -465,9 +490,9 @@ function HomePage() {
             <h2 className="text-2xl font-extrabold tracking-tight text-white">Tâm thư từ người tạo app</h2>
           </div>
           <p className="text-white/90 text-base leading-relaxed italic">
-            "Là một người dùng giống bạn, tôi luôn mong muốn việc quản lý giấy tờ phải thật tiện lợi nhưng vẫn tuyệt
-            đối an toàn. Vì vậy, Ví giấy tờ được xây dựng theo hướng lưu trữ và xử lý offline hoàn toàn, không gửi dữ
-            liệu cho bất kỳ bên nào ngoài thiết bị của bạn, để bạn có thể dùng app với sự yên tâm trọn vẹn."
+            "Là một người dùng như bạn, tôi muốn việc quản lý giấy tờ phải thật tiện lợi nhưng vẫn an toàn tuyệt đối.
+            Vì vậy, Ví Giấy Tờ được xây dựng để lưu và xử lý hoàn toàn offline, không gửi dữ liệu ra ngoài thiết bị
+            của bạn, để bạn có thể yên tâm sử dụng mỗi ngày."
           </p>
         </div>
       </section>
@@ -493,8 +518,10 @@ function HomePage() {
 
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-extrabold tracking-tight text-white">Các chức năng chính của app</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-white">Các màn hình chính trong app</h2>
+          <p className="hidden sm:block text-xs text-white/60">Vuốt ngang để xem thêm</p>
         </div>
+        <p className="sm:hidden text-xs text-white/60 mb-3">Vuốt ngang để xem thêm các màn hình.</p>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
           {mockupPages.map((item) => (
             <article className="flex-none w-[300px] sm:w-[340px] md:w-[360px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
@@ -515,18 +542,18 @@ function HomePage() {
         <div className="glass-card rounded-3xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <p className="text-3xl font-extrabold text-white">100%</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Offline Trên Thiết Bị</p>
+              <p className="text-3xl font-extrabold text-white">100% offline</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Dữ liệu ở trên thiết bị</p>
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
             <div>
-              <p className="text-3xl font-extrabold text-white">Quản lý giấy tờ</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Nhanh Chóng, Thuận Tiện</p>
+              <p className="text-3xl font-extrabold text-white">Tìm lại trong vài giây</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Theo tên, phân loại, ghi chú</p>
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
             <div>
-              <p className="text-3xl font-extrabold text-white">App do người Việt</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Phát Triển</p>
+              <p className="text-3xl font-extrabold text-white">Người Việt phát triển</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">Tối ưu cho nhu cầu tiếng Việt</p>
             </div>
           </div>
         </div>
@@ -537,7 +564,7 @@ function HomePage() {
 
 function TermsPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Điều khoản sử dụng
@@ -587,7 +614,7 @@ function TermsPage() {
 
 function PrivacyPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Quyền riêng tư
@@ -601,6 +628,12 @@ function PrivacyPage() {
               <li key={point}>{point}</li>
             ))}
           </ul>
+        </section>
+        <section>
+          <h2 className="text-lg font-bold">Dữ liệu của bạn có được chia sẻ đi đâu không?</h2>
+          <p className="text-white/70 mt-2 text-sm leading-relaxed">
+            Không. Dữ liệu của app lưu 100% offline trên máy bạn, không được gửi đi bất kỳ nơi nào khác.
+          </p>
         </section>
         <section>
           <h2 className="text-lg font-bold">Dữ liệu nào được lưu trong ứng dụng</h2>
@@ -637,7 +670,7 @@ function PrivacyPage() {
 
 function ContactPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 md:pt-24 relative z-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
       <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-6">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           Liên hệ
