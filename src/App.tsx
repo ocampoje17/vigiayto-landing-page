@@ -11,8 +11,7 @@ const HOME_PATH = '/'
 const PRIVACY_PATH = '/quyen-rieng-tu'
 const TERMS_PATH = '/dieu-khoan-su-dung'
 const CONTACT_PATH = '/lien-he'
-const DOWNLOAD_PATH = '/tai-app'
-const DOWNLOAD_ALIAS_PATH = '/download'
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.namhnz.vigiayto'
 
 const THEME_STORAGE_KEY = 'vigiayto-theme'
 const LANGUAGE_STORAGE_KEY = 'vigiayto-language'
@@ -269,13 +268,6 @@ const contactCardsEn = [
   },
 ]
 
-const appTestLinks = {
-  googleGroup: 'https://groups.google.com/g/test-vgt-app',
-  optInTesting: 'https://play.google.com/apps/testing/com.namhnz.vigiayto',
-  downloadApp: 'https://play.google.com/store/apps/details?id=com.namhnz.vigiayto',
-  website: 'https://vigiayto.laychu.com/',
-}
-
 const layoutTextByLanguage = {
   vi: {
     logoAlt: 'Logo Ví Giấy Tờ',
@@ -474,55 +466,6 @@ const privacySectionsByLanguage = {
   ],
 } as const
 
-const downloadTextByLanguage = {
-  vi: {
-    title: 'Đang tìm một vài bạn giúp test app Android (14 ngày, closed testing): Ví giấy tờ',
-    testersNeeded: 'Cần người thử nghiệm',
-    greeting: 'Chào mọi người 👋',
-    intro:
-      'Mình đang hoàn thiện app Android tên là Ví Giấy Tờ và rất mong có một vài bạn giúp test trước khi phát hành. Mình chỉ cần khoảng 12 tester trong 14 ngày (yêu cầu của Google Play).',
-    whatAppDoes: 'Ứng dụng làm được gì:',
-    privacyFocused: 'Tập trung vào riêng tư:',
-    whatNeed: 'Mình cần bạn giúp:',
-    howToJoin: 'Cách tham gia:',
-    closing:
-      'Mình là dev solo nên mọi góp ý, dù nhỏ, đều rất có giá trị 🙏 Nếu bạn muốn tham gia, comment hoặc nhắn tin cho mình để mình hỗ trợ bắt đầu.',
-    thanks: 'Cảm ơn mọi người rất nhiều!',
-    appDoesItems: ['Lưu và sắp xếp giấy tờ cá nhân 📂', 'Tìm kiếm nhanh (bao gồm chữ OCR) 🔍', 'Chia sẻ giấy tờ dễ dàng 📤'],
-    privacyItems: ['100% offline', 'Không thu thập dữ liệu', 'Mọi thứ nằm trên thiết bị của bạn'],
-    needItems: [
-      'Cài app qua link test',
-      'Dùng app bình thường (không phức tạp)',
-      'Giữ app trong 14 ngày',
-      'Gửi góp ý (bug, UX, ý tưởng...)',
-    ],
-    joinLabels: ['Tham gia Google Group', 'Đăng ký closed testing', 'Tải ứng dụng', 'Website'],
-  },
-  en: {
-    title: 'Looking for a few people to help test my Android app (14 days, closed testing): Vi Giay To',
-    testersNeeded: 'Testers Needed',
-    greeting: 'Hey everyone 👋',
-    intro:
-      'I’m currently finishing an Android app called Vi Giay To and I’d really appreciate a few people helping me test it before release. I only need around 12 testers for 14 days (Google Play requirement).',
-    whatAppDoes: 'What the app does:',
-    privacyFocused: 'Privacy-focused:',
-    whatNeed: 'What I need from you:',
-    howToJoin: 'How to join:',
-    closing:
-      'I’m a solo developer, so any feedback (even small) means a lot 🙏 If you’re interested, comment or DM me and I’ll help you get started.',
-    thanks: 'Thanks so much!',
-    appDoesItems: ['Store and organize personal documents 📂', 'Fast search (including OCR text) 🔍', 'Share documents easily 📤'],
-    privacyItems: ['100% offline', 'No data collection', 'Everything stays on your device'],
-    needItems: [
-      'Install the app via the testing link',
-      'Use it normally (nothing complicated)',
-      'Keep it installed for 14 days',
-      'Share any feedback (bugs, UX, ideas...)',
-    ],
-    joinLabels: ['Join Google Group', 'Opt-in testing', 'Download app', 'Website'],
-  },
-} as const
-
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -637,13 +580,15 @@ function AppLayout({
                 {theme === 'dark' ? 'light_mode' : 'dark_mode'}
               </span>
             </button>
-            <Link
-              to={DOWNLOAD_PATH}
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noreferrer"
               className="bg-white text-indigo-950 px-3 sm:px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold hover:bg-zinc-100 transition-all active:scale-95 duration-200 shadow-sm shrink-0"
             >
               <span className="sm:hidden">{text.playStoreShort}</span>
               <span className="hidden sm:inline">{text.playStoreCta}</span>
-            </Link>
+            </a>
           </div>
         </nav>
         <div className="md:hidden mt-2">
@@ -771,13 +716,15 @@ function HomePage({ language }: { language: Language }) {
             </h1>
             <p className="text-base md:text-lg text-white/70 font-light max-w-md mb-8 leading-relaxed">{text.desc}</p>
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
-              <Link
-                to={DOWNLOAD_PATH}
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="bg-white text-indigo-900 px-5 sm:px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/10 active:scale-95 transition-all"
               >
                 <span className="material-symbols-outlined text-xl">android</span>
                 {text.androidCta}
-              </Link>
+              </a>
               <Link
                 to={PRIVACY_PATH}
                 className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-5 sm:px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 active:scale-95 transition-all"
@@ -1071,74 +1018,6 @@ function ContactPage({ language }: { language: Language }) {
   )
 }
 
-function DownloadPage({ language }: { language: Language }) {
-  const text = downloadTextByLanguage[language]
-  const links = [appTestLinks.googleGroup, appTestLinks.optInTesting, appTestLinks.downloadApp, appTestLinks.website]
-
-  return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
-      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-6">
-        <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
-          Android testing
-        </p>
-        <h1 className="text-2xl md:text-4xl font-extrabold leading-tight">{text.title}</h1>
-
-        <section className="space-y-2">
-          <h2 className="text-xl font-bold">{text.testersNeeded}</h2>
-          <p className="text-white/80">{text.greeting}</p>
-          <p className="text-white/70 text-sm leading-relaxed">{text.intro}</p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-bold">{text.whatAppDoes}</h2>
-          <ul className="list-disc list-inside mt-3 space-y-2 text-white/70 text-sm leading-relaxed">
-            {text.appDoesItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-bold">{text.privacyFocused}</h2>
-          <ul className="list-disc list-inside mt-3 space-y-2 text-white/70 text-sm leading-relaxed">
-            {text.privacyItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-bold">{text.whatNeed}</h2>
-          <ul className="list-disc list-inside mt-3 space-y-2 text-white/70 text-sm leading-relaxed">
-            {text.needItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-bold">{text.howToJoin}</h2>
-          <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-            {links.map((href, index) => (
-              <li key={href}>
-                <span className="font-semibold text-white/85">{text.joinLabels[index]}: </span>
-                <a href={href} target="_blank" rel="noreferrer" className="text-cyan-300 underline break-all">
-                  {href}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="space-y-2">
-          <p className="text-white/70 text-sm leading-relaxed">{text.closing}</p>
-          <p className="text-white font-semibold">{text.thanks}</p>
-        </section>
-      </section>
-    </main>
-  )
-}
-
 function App() {
   const [language, setLanguage] = useState<Language>(() => {
     const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY)
@@ -1184,22 +1063,6 @@ function App() {
           element={
             <AppLayout language={language} setLanguage={setLanguage}>
               <ContactPage language={language} />
-            </AppLayout>
-          }
-        />
-        <Route
-          path={DOWNLOAD_PATH}
-          element={
-            <AppLayout language={language} setLanguage={setLanguage}>
-              <DownloadPage language={language} />
-            </AppLayout>
-          }
-        />
-        <Route
-          path={DOWNLOAD_ALIAS_PATH}
-          element={
-            <AppLayout language={language} setLanguage={setLanguage}>
-              <DownloadPage language={language} />
             </AppLayout>
           }
         />
