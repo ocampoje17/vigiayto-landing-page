@@ -174,67 +174,107 @@ const supportFeatureCardsEn = [
 
 const mockupPages = [
   {
-    title: 'Trang tổng quan',
-    desc: 'Xem nhanh toàn bộ giấy tờ trong một nơi, kèm mục đã ghim và giấy tờ sắp hết hạn.',
-    image: `${baseUrl}mockups/home-overview.svg`,
+    title: 'Trang chủ',
+    desc: 'Quản lý toàn bộ giấy tờ cá nhân quan trọng ngay tại trang chủ.',
+    image: `${baseUrl}screenshots/play_store_01.png`,
   },
   {
-    title: 'Tìm kiếm',
-    desc: 'Tìm theo tên, nhãn, ghi chú hoặc nội dung OCR để mở lại giấy tờ chỉ trong vài giây.',
-    image: `${baseUrl}mockups/search-ocr.svg`,
+    title: 'Sắp đến hạn',
+    desc: 'Theo dõi và nhận nhắc nhở các giấy tờ sắp hết hạn.',
+    image: `${baseUrl}screenshots/play_store_02.png`,
   },
   {
-    title: 'Ảnh giấy tờ',
-    desc: 'Xem giấy tờ theo dạng thư viện ảnh, mở nhanh từng ảnh để đối chiếu hoặc chuyển sang PDF.',
-    image: `${baseUrl}mockups/tab-images.svg`,
+    title: 'Đã hết hạn',
+    desc: 'Phân loại rõ ràng các giấy tờ đã quá hạn sử dụng.',
+    image: `${baseUrl}screenshots/play_store_03.png`,
   },
   {
-    title: 'Xuất PDF',
-    desc: 'Chọn ảnh bất kỳ để ghép thành file PDF gọn gàng, tiện lưu trữ và chia sẻ.',
-    image: `${baseUrl}mockups/tab-pdf.svg`,
+    title: 'Sổ ghi chú',
+    desc: 'Lưu trữ nhanh thông tin quan trọng đi kèm giấy tờ.',
+    image: `${baseUrl}screenshots/play_store_04.png`,
   },
   {
-    title: 'OCR tiếng Việt',
-    desc: 'Chuyển ảnh và PDF sang văn bản để sao chép, tìm kiếm lại và đọc nội dung dễ hơn.',
-    image: `${baseUrl}mockups/tab-ocr.svg`,
+    title: 'Trang ảnh',
+    desc: 'Quản lý hình ảnh chụp giấy tờ trực quan và rõ nét.',
+    image: `${baseUrl}screenshots/play_store_05.png`,
   },
   {
-    title: 'Cài đặt',
-    desc: 'Quản lý mật khẩu, sinh trắc học, sao lưu và các tùy chọn riêng tư của ứng dụng.',
-    image: `${baseUrl}mockups/security-settings.svg`,
+    title: 'Sổ ghi nợ',
+    desc: 'Ghi chép và theo dõi các khoản nợ cá nhân tiện lợi.',
+    image: `${baseUrl}screenshots/play_store_06.png`,
+  },
+  {
+    title: 'Tạo PDF & Cài đặt',
+    desc: 'Tùy chỉnh cấu hình ứng dụng và xuất bản tài liệu dễ dàng.',
+    image: `${baseUrl}screenshots/play_store_07.png`,
+  },
+  {
+    title: 'Nhận dạng chữ CCCD',
+    desc: 'Tự động trích xuất thông tin chữ từ ảnh chụp căn cước công dân.',
+    image: `${baseUrl}screenshots/play_store_08.png`,
+  },
+  {
+    title: 'Chi tiết CCCD',
+    desc: 'Xem đầy đủ thông tin chi tiết và các trường dữ liệu của căn cước.',
+    image: `${baseUrl}screenshots/play_store_09.png`,
+  },
+  {
+    title: 'Quét mã QR ngân hàng',
+    desc: 'Quét và lưu trữ thông tin mã QR chuyển khoản ngân hàng tiện lợi.',
+    image: `${baseUrl}screenshots/play_store_10.png`,
   },
 ]
 
 const mockupPagesEn = [
   {
-    title: 'Overview',
-    desc: 'See all documents in one place, including pinned items and upcoming expirations.',
-    image: `${baseUrl}mockups/home-overview.svg`,
+    title: 'Home Screen',
+    desc: 'Manage all your important personal documents right on the home screen.',
+    image: `${baseUrl}screenshots/play_store_01.png`,
   },
   {
-    title: 'Search',
-    desc: 'Search by name, labels, notes, or OCR content to reopen docs in seconds.',
-    image: `${baseUrl}mockups/search-ocr.svg`,
+    title: 'Upcoming Expirations',
+    desc: 'Track and receive reminders for documents that are about to expire.',
+    image: `${baseUrl}screenshots/play_store_02.png`,
   },
   {
-    title: 'Document images',
-    desc: 'Browse documents in gallery mode and open each image quickly.',
-    image: `${baseUrl}mockups/tab-images.svg`,
+    title: 'Expired Documents',
+    desc: 'Clearly categorize documents that have passed their expiration date.',
+    image: `${baseUrl}screenshots/play_store_03.png`,
   },
   {
-    title: 'PDF export',
-    desc: 'Pick any images and combine them into a clean PDF file.',
-    image: `${baseUrl}mockups/tab-pdf.svg`,
+    title: 'Notes',
+    desc: 'Quickly store important notes accompanying your documents.',
+    image: `${baseUrl}screenshots/play_store_04.png`,
   },
   {
-    title: 'Vietnamese OCR',
-    desc: 'Convert images and PDFs to text for copy, search, and reading.',
-    image: `${baseUrl}mockups/tab-ocr.svg`,
+    title: 'Document Photos',
+    desc: 'Manage document photos visually with high clarity.',
+    image: `${baseUrl}screenshots/play_store_05.png`,
   },
   {
-    title: 'Settings',
-    desc: 'Manage password, biometrics, backup, and privacy options.',
-    image: `${baseUrl}mockups/security-settings.svg`,
+    title: 'Debt Ledger',
+    desc: 'Conveniently record and track personal debts.',
+    image: `${baseUrl}screenshots/play_store_06.png`,
+  },
+  {
+    title: 'PDF & Settings',
+    desc: 'Customize app configuration and export documents easily.',
+    image: `${baseUrl}screenshots/play_store_07.png`,
+  },
+  {
+    title: 'ID Card OCR',
+    desc: 'Automatically extract text information from ID card photos.',
+    image: `${baseUrl}screenshots/play_store_08.png`,
+  },
+  {
+    title: 'ID Card Details',
+    desc: 'View full detailed information and data fields of the ID card.',
+    image: `${baseUrl}screenshots/play_store_09.png`,
+  },
+  {
+    title: 'Bank QR Scanner',
+    desc: 'Scan and store bank transfer QR code information conveniently.',
+    image: `${baseUrl}screenshots/play_store_10.png`,
   },
 ]
 
@@ -327,7 +367,7 @@ const homeTextByLanguage = {
     creatorQuote:
       '"Là một người dùng như bạn, tôi muốn việc quản lý giấy tờ phải thật tiện lợi nhưng vẫn an toàn tuyệt đối. Vì vậy, Ví Giấy Tờ được xây dựng để lưu và xử lý hoàn toàn offline, không gửi dữ liệu ra ngoài thiết bị của bạn, để bạn có thể yên tâm sử dụng mỗi ngày."',
     supportTitle: 'Các chức năng phụ hữu ích',
-    screensTitle: 'Các màn hình chính trong app',
+    screensTitle: 'Hình ảnh thực tế của app',
     screensHintDesktop: 'Vuốt ngang để xem thêm',
     screensHintMobile: 'Vuốt ngang để xem thêm các màn hình.',
     metric1Title: '100% offline',
@@ -360,7 +400,7 @@ const homeTextByLanguage = {
     creatorQuote:
       '"As a user like you, I wanted document management to be simple and truly private. That is why Vi Giay To stores and processes everything offline, without sending your data outside your device."',
     supportTitle: 'Helpful extra features',
-    screensTitle: 'Main app screens',
+    screensTitle: 'Actual app screenshots',
     screensHintDesktop: 'Swipe horizontally to see more',
     screensHintMobile: 'Swipe horizontally to view more screens.',
     metric1Title: '100% offline',
@@ -704,18 +744,22 @@ function HomePage({ language }: { language: Language }) {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
-      <section className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem] hero-glass p-5 sm:p-6 md:p-12 mb-8 shadow-2xl">
+      {/* Ambient neon decorative blobs */}
+      <div className="absolute top-20 left-10 -z-10 ambient-glow-1 pointer-events-none hidden md:block" />
+      <div className="absolute top-[40%] right-10 -z-10 ambient-glow-2 pointer-events-none hidden md:block" />
+
+      <section className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem] hero-glass p-5 sm:p-6 md:p-12 mb-8 shadow-2xl animate-fade-in-up">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl text-center md:text-left">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase mb-4 backdrop-blur-sm animate-fade-in-up delay-100">
               {text.badge}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.1] mb-5 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.1] mb-5 sm:mb-6 animate-fade-in-up delay-200">
               {text.titleLine1} <br />
               {text.titleLine2}
             </h1>
-            <p className="text-base md:text-lg text-white/70 font-light max-w-md mb-8 leading-relaxed">{text.desc}</p>
-            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+            <p className="text-base md:text-lg text-white/70 font-light max-w-md mb-8 leading-relaxed animate-fade-in-up delay-300">{text.desc}</p>
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start animate-fade-in-up delay-400">
               <a
                 href={PLAY_STORE_URL}
                 target="_blank"
@@ -734,19 +778,19 @@ function HomePage({ language }: { language: Language }) {
             </div>
           </div>
 
-          <div className="relative w-full max-w-[250px] sm:max-w-[320px] aspect-square flex items-center justify-center">
+          <div className="relative w-full max-w-[250px] sm:max-w-[320px] aspect-square flex items-center justify-center animate-fade-in-up delay-500">
             <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-[80px] animate-pulse" />
-            <div className="relative bg-white/5 backdrop-blur-2xl p-8 sm:p-12 rounded-[2.25rem] sm:rounded-[3rem] rotate-12 shadow-2xl border border-white/10">
+            <div className="relative bg-white/5 backdrop-blur-2xl p-8 sm:p-12 rounded-[2.25rem] sm:rounded-[3rem] rotate-12 shadow-2xl border border-white/10 hero-mockup-main">
               <img
                 src={appLogoUrl}
                 alt={layoutText.logoAlt}
                 className="w-[96px] h-[96px] sm:w-[120px] sm:h-[120px] rounded-[22px] sm:rounded-[28px] object-cover"
               />
             </div>
-            <div className="absolute -top-4 -right-2 bg-white/10 backdrop-blur-xl p-4 rounded-2xl -rotate-12 shadow-lg border border-white/20">
+            <div className="absolute -top-4 -right-2 bg-white/10 backdrop-blur-xl p-4 rounded-2xl -rotate-12 shadow-lg border border-white/20 hero-mockup-lock">
               <span className="material-symbols-outlined text-white/80 text-xl">lock</span>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-xl p-5 rounded-2xl rotate-6 shadow-lg border border-white/20">
+            <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-xl p-5 rounded-2xl rotate-6 shadow-lg border border-white/20 hero-mockup-wifi">
               <span className="material-symbols-outlined text-white/80 text-2xl">wifi_off</span>
             </div>
           </div>
@@ -754,10 +798,10 @@ function HomePage({ language }: { language: Language }) {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        {benefitCardsData.map((item) => (
+        {benefitCardsData.map((item, idx) => (
           <div
             key={item.title}
-            className="group glass-card p-6 rounded-3xl transition-all hover:translate-y-[-4px] cursor-default"
+            className={`group glass-card p-6 rounded-3xl cursor-default reveal-on-scroll stagger-${idx + 1}`}
           >
             <div
               className={`w-12 h-12 rounded-2xl ${item.tone} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-inner border border-white/10`}
@@ -771,7 +815,7 @@ function HomePage({ language }: { language: Language }) {
       </section>
 
       <section className="mb-12">
-        <div className="flex items-end justify-between mb-6">
+        <div className="flex items-end justify-between mb-6 reveal-on-scroll">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">{text.mainFeaturesTitle}</h2>
           <p className="hidden md:block text-sm text-white/70">{text.mainFeaturesHint}</p>
         </div>
@@ -779,7 +823,7 @@ function HomePage({ language }: { language: Language }) {
           {mainFeatureCardsData.map((item, idx) => (
             <article
               key={item.title}
-              className={`group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-gradient-to-br ${item.cardTone} glass-card p-5 sm:p-6 min-h-[205px] sm:min-h-[220px] hover:-translate-y-1 transition-all duration-300`}
+              className={`group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-gradient-to-br ${item.cardTone} glass-card p-5 sm:p-6 min-h-[205px] sm:min-h-[220px] reveal-on-scroll stagger-${idx + 1}`}
             >
               <div className={`absolute -top-14 -right-14 h-36 w-36 rounded-full blur-3xl ${item.glowTone}`} />
               <span className="material-symbols-outlined absolute -right-4 -bottom-5 text-[110px] text-white/[0.08] select-none pointer-events-none">
@@ -802,7 +846,7 @@ function HomePage({ language }: { language: Language }) {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <div className="security-priority-card glass-card rounded-3xl p-6 md:p-8 border border-white/20">
           <div className="security-content">
             <div className="flex items-center gap-3 mb-4">
@@ -815,15 +859,15 @@ function HomePage({ language }: { language: Language }) {
               <p className="text-white font-semibold text-base leading-relaxed">{text.securityDesc}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
-              <div className="security-fact rounded-2xl p-4">
+              <div className="security-fact rounded-2xl p-4 reveal-on-scroll stagger-1">
                 <p className="text-white font-semibold text-sm">{text.securityFact1Title}</p>
                 <p className="text-white/70 text-xs mt-2">{text.securityFact1Desc}</p>
               </div>
-              <div className="security-fact rounded-2xl p-4">
+              <div className="security-fact rounded-2xl p-4 reveal-on-scroll stagger-2">
                 <p className="text-white font-semibold text-sm">{text.securityFact2Title}</p>
                 <p className="text-white/70 text-xs mt-2">{text.securityFact2Desc}</p>
               </div>
-              <div className="security-fact rounded-2xl p-4">
+              <div className="security-fact rounded-2xl p-4 reveal-on-scroll stagger-3">
                 <p className="text-white font-semibold text-sm">{text.securityFact3Title}</p>
                 <p className="text-white/70 text-xs mt-2">{text.securityFact3Desc}</p>
               </div>
@@ -836,7 +880,7 @@ function HomePage({ language }: { language: Language }) {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <div className="glass-card rounded-3xl p-6 md:p-8 border border-amber-200/40 shadow-[0_0_32px_rgba(245,158,11,0.2)]">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 rounded-2xl bg-amber-400/20 border border-amber-200/30 flex items-center justify-center">
@@ -848,14 +892,14 @@ function HomePage({ language }: { language: Language }) {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">{text.supportTitle}</h2>
         </div>
         <div className="glass-card rounded-3xl p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
-            {supportFeatureCardsData.map((item) => (
-              <div key={item.title} className="flex items-start gap-3">
+            {supportFeatureCardsData.map((item, idx) => (
+              <div key={item.title} className={`flex items-start gap-3 reveal-on-scroll stagger-${(idx % 2) + 1}`}>
                 <span className="material-symbols-outlined text-white text-xl mt-0.5">{item.icon}</span>
                 <div>
                   <h3 className="text-white font-bold text-base">{item.title}</h3>
@@ -867,19 +911,19 @@ function HomePage({ language }: { language: Language }) {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-extrabold tracking-tight text-white">{text.screensTitle}</h2>
           <p className="hidden sm:block text-xs text-white/60">{text.screensHintDesktop}</p>
         </div>
         <p className="sm:hidden text-xs text-white/60 mb-3">{text.screensHintMobile}</p>
         <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory">
-          {mockupPagesData.map((item) => (
-            <article className="flex-none w-[300px] sm:w-[340px] md:w-[360px] snap-center group glass-card rounded-3xl p-4" key={item.title}>
+          {mockupPagesData.map((item, idx) => (
+            <article className={`flex-none w-[300px] sm:w-[340px] md:w-[360px] snap-center group glass-card rounded-3xl p-4 reveal-on-scroll stagger-${(idx % 3) + 1}`} key={item.title}>
               <img
                 src={item.image}
-                alt={`Mockup ${item.title}`}
-                className="w-full h-[200px] sm:h-[230px] md:h-[250px] object-contain rounded-2xl border border-white/10 shadow-2xl bg-slate-900/40 p-1"
+                alt={`Screenshot ${item.title}`}
+                className="w-full h-[400px] sm:h-[460px] md:h-[500px] object-contain rounded-2xl border border-white/10 shadow-2xl bg-slate-900/40 p-1"
                 loading="lazy"
               />
               <h3 className="text-base font-bold text-white mt-4">{item.title}</h3>
@@ -889,20 +933,20 @@ function HomePage({ language }: { language: Language }) {
         </div>
       </section>
 
-      <section className="mb-12">
+      <section className="mb-12 reveal-on-scroll">
         <div className="glass-card rounded-3xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
+            <div className="reveal-on-scroll stagger-1">
               <p className="text-3xl font-extrabold text-white">{text.metric1Title}</p>
               <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">{text.metric1Desc}</p>
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
-            <div>
+            <div className="reveal-on-scroll stagger-2">
               <p className="text-3xl font-extrabold text-white">{text.metric2Title}</p>
               <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">{text.metric2Desc}</p>
             </div>
             <div className="hidden md:block w-px h-14 bg-white/15" />
-            <div>
+            <div className="reveal-on-scroll stagger-3">
               <p className="text-3xl font-extrabold text-white">{text.metric3Title}</p>
               <p className="text-xs font-bold uppercase tracking-widest text-white/50 mt-1">{text.metric3Desc}</p>
             </div>
@@ -921,15 +965,15 @@ function TermsPage({ language }: { language: Language }) {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
-      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
+      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5 reveal-on-scroll">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           {badge}
         </p>
         <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
         <p className="text-white/60 text-sm">{updated}</p>
 
-        {sections.map((section) => (
-          <section key={section.title}>
+        {sections.map((section, idx) => (
+          <section key={section.title} className={`reveal-on-scroll stagger-${idx + 1}`}>
             <h2 className="text-lg font-bold">{section.title}</h2>
             <p className="text-white/70 mt-2 text-sm leading-relaxed">{section.desc}</p>
           </section>
@@ -951,13 +995,13 @@ function PrivacyPage({ language }: { language: Language }) {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
-      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5">
+      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-5 reveal-on-scroll">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           {badge}
         </p>
         <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
         <p className="text-white/60 text-sm">{updated}</p>
-        <section>
+        <section className="reveal-on-scroll stagger-1">
           <h2 className="text-lg font-bold">{coreTitle}</h2>
           <ul className="list-disc list-inside mt-3 space-y-2 text-white/70 text-sm leading-relaxed">
             {points.map((point) => (
@@ -965,8 +1009,8 @@ function PrivacyPage({ language }: { language: Language }) {
             ))}
           </ul>
         </section>
-        {sections.map((section) => (
-          <section key={section.title}>
+        {sections.map((section, idx) => (
+          <section key={section.title} className={`reveal-on-scroll stagger-${(idx % 3) + 1}`}>
             <h2 className="text-lg font-bold">{section.title}</h2>
             <p className="text-white/70 mt-2 text-sm leading-relaxed">{section.desc}</p>
           </section>
@@ -987,7 +1031,7 @@ function ContactPage({ language }: { language: Language }) {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-[8.5rem] md:pt-24 relative z-10">
-      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-6">
+      <section className="glass-card rounded-3xl p-6 md:p-8 text-white/90 space-y-6 reveal-on-scroll">
         <p className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase">
           {badge}
         </p>
@@ -995,13 +1039,13 @@ function ContactPage({ language }: { language: Language }) {
         <p className="text-white/70 text-sm leading-relaxed">{intro}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {cards.map((card) => (
+          {cards.map((card, idx) => (
             <a
               key={card.title}
               href={card.href}
               target={card.href.startsWith('http') ? '_blank' : undefined}
               rel={card.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="glass-card rounded-3xl p-6 flex items-center gap-4 hover:bg-white/10 transition-all"
+              className={`glass-card rounded-3xl p-6 flex items-center gap-4 hover:bg-white/10 transition-all reveal-on-scroll stagger-${idx + 1}`}
             >
               <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-2xl">{card.icon}</span>
@@ -1025,10 +1069,39 @@ function App() {
     return window.navigator.language.toLowerCase().startsWith('vi') ? 'vi' : 'en'
   })
 
+  const location = useLocation()
+
   useEffect(() => {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language)
     document.documentElement.lang = language
   }, [language])
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.05,
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+        }
+      })
+    }, observerOptions)
+
+    const timeoutId = setTimeout(() => {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll')
+      revealElements.forEach((el) => observer.observe(el))
+    }, 120)
+
+    return () => {
+      clearTimeout(timeoutId)
+      const revealElements = document.querySelectorAll('.reveal-on-scroll')
+      revealElements.forEach((el) => observer.unobserve(el))
+    }
+  }, [location.pathname, language])
 
   return (
     <>

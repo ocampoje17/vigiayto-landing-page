@@ -36,12 +36,67 @@ button:focus-visible {
   background-attachment: fixed;
 }
 
+/* Smooth global theme transition */
+body, 
+.page-mesh-bg, 
+.glass-card, 
+.hero-glass, 
+header, 
+nav, 
+button, 
+a, 
+footer,
+span,
+p,
+h1,
+h2,
+h3 {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 
+              0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.glass-card:hover::before {
+  left: 125%;
 }
 
 .hero-glass {
@@ -61,6 +116,9 @@ button:focus-visible {
   pointer-events: none;
   z-index: -10;
   filter: brightness(0) invert(1);
+  animation: spin-slow 240s linear infinite;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -135,6 +193,23 @@ html.light .glass-card {
   background: rgba(255, 255, 255, 0.65);
   border: 1px solid rgba(15, 23, 42, 0.12);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.light .glass-card::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+html.light .glass-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12),
+              0 0 20px rgba(99, 102, 241, 0.08);
 }
 
 html.light .hero-glass {
@@ -337,4 +412,160 @@ html.light a.bg-white.text-indigo-900 {
 
 html.light a.hover\:bg-zinc-100:hover {
   background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================
+   ANIMATIONS & KEYFRAMES SYSTEM
+   ========================================================== */
+
+/* Watermark Rotation */
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 3D layered floating mockup animations */
+@keyframes float-main {
+  0%, 100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(10deg);
+  }
+}
+
+@keyframes float-lock {
+  0%, 100% {
+    transform: translateY(0) rotate(-12deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-15deg);
+  }
+}
+
+@keyframes float-wifi {
+  0%, 100% {
+    transform: translateY(0) rotate(6deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+}
+
+.hero-mockup-main {
+  animation: float-main 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-mockup-lock {
+  animation: float-lock 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-mockup-wifi {
+  animation: float-wifi 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay helpers */
+.stagger-1 { transition-delay: 80ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 320ms; }
+.stagger-5 { transition-delay: 400ms; }
+
+/* Intro loading animation for Hero section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Ambient decorative neon blobs */
+@keyframes drift-blob-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+@keyframes drift-blob-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 50px) scale(1.15);
+  }
+}
+
+.ambient-glow-1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(99, 102, 241, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift-blob-1 15s ease-in-out infinite;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(168, 85, 247, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift-blob-2 12s ease-in-out infinite;
+}
+
+html.light .ambient-glow-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+}
+
+html.light .ambient-glow-2 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0) 70%);
 }
