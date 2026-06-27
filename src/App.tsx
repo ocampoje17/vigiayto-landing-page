@@ -367,6 +367,8 @@ const homeTextByLanguage = {
     creatorQuote:
       '"Là một người dùng như bạn, tôi muốn việc quản lý giấy tờ phải thật tiện lợi nhưng vẫn an toàn tuyệt đối. Vì vậy, Ví Giấy Tờ được xây dựng để lưu và xử lý hoàn toàn offline, không gửi dữ liệu ra ngoài thiết bị của bạn, để bạn có thể yên tâm sử dụng mỗi ngày."',
     supportTitle: 'Các chức năng phụ hữu ích',
+    launchBadge: 'ĐƯỢC NHẮC ĐẾN',
+    launchTitle: 'Ví Giấy Tờ đang được giới thiệu trên các nền tảng launch của Việt Nam',
     screensTitle: 'Hình ảnh thực tế của app',
     screensHintDesktop: 'Vuốt ngang để xem thêm',
     screensHintMobile: 'Vuốt ngang để xem thêm các màn hình.',
@@ -400,6 +402,8 @@ const homeTextByLanguage = {
     creatorQuote:
       '"As a user like you, I wanted document management to be simple and truly private. That is why Vi Giay To stores and processes everything offline, without sending your data outside your device."',
     supportTitle: 'Helpful extra features',
+    launchBadge: 'FEATURED ON',
+    launchTitle: 'Vi Giay To is featured on Vietnamese launch platforms',
     screensTitle: 'Actual app screenshots',
     screensHintDesktop: 'Swipe horizontally to see more',
     screensHintMobile: 'Swipe horizontally to view more screens.',
@@ -907,6 +911,69 @@ function HomePage({ language }: { language: Language }) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12 reveal-on-scroll">
+        <div className="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex-1 text-center md:text-left">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold tracking-widest uppercase mb-3 backdrop-blur-sm">
+              {text.launchBadge}
+            </span>
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white max-w-2xl leading-snug">
+              {text.launchTitle}
+            </h2>
+          </div>
+          <div className="flex flex-col sm:flex-row md:flex-col items-center justify-center gap-4 shrink-0">
+            <a
+              href="https://unikorn.vn/p/vi-giay-to?ref=embed-vi-giay-to"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all hover:scale-105 active:scale-95 duration-200 shrink-0"
+            >
+              <img
+                src="https://unikorn.vn/api/widgets/badge/vi-giay-to?theme=light"
+                alt="Ví giấy tờ trên Unikorn.vn"
+                style={{ width: '256px', height: '64px' }}
+                width="256"
+                height="64"
+                className="dark:hidden"
+              />
+              <img
+                src="https://unikorn.vn/api/widgets/badge/vi-giay-to?theme=dark"
+                alt="Ví giấy tờ trên Unikorn.vn"
+                style={{ width: '256px', height: '64px' }}
+                width="256"
+                height="64"
+                className="hidden dark:block"
+              />
+            </a>
+            <a
+              href="https://launch.j2team.dev/products/vi-giay-to?utm_source=badge-launched&utm_medium=badge&utm_campaign=badge-vi-giay-to"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all hover:scale-105 active:scale-95 duration-200 shrink-0"
+            >
+              <img
+                src="https://launch.j2team.dev/badge/vi-giay-to/light"
+                alt="Ví giấy tờ - Launched on J2TEAM Launch"
+                style={{ width: '250px', height: '54px' }}
+                width="250"
+                height="54"
+                loading="lazy"
+                className="dark:hidden"
+              />
+              <img
+                src="https://launch.j2team.dev/badge/vi-giay-to/dark"
+                alt="Ví giấy tờ - Launched on J2TEAM Launch"
+                style={{ width: '250px', height: '54px' }}
+                width="250"
+                height="54"
+                loading="lazy"
+                className="hidden dark:block"
+              />
+            </a>
           </div>
         </div>
       </section>
