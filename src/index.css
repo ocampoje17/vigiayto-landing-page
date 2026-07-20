@@ -352,6 +352,10 @@ html.light .bg-slate-900\/40 {
   background: rgba(15, 23, 42, 0.04) !important;
 }
 
+html.light .analytics-consent-accept {
+  color: #ffffff !important;
+}
+
 html.light .text-sky-100 {
   color: #075985 !important;
 }

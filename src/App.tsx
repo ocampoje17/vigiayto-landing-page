@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link, NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import AnalyticsConsent from './components/AnalyticsConsent'
 
 type Language = 'vi' | 'en'
 
@@ -470,6 +471,10 @@ const privacySectionsByLanguage = {
       desc: 'Không. Dữ liệu của app lưu 100% offline trên máy bạn, không được gửi đi bất kỳ nơi nào khác.',
     },
     {
+      title: 'Phân tích việc sử dụng website',
+      desc: 'Landing page chỉ sử dụng Google Analytics khi bạn chủ động chọn bật Analytics. Dữ liệu này giúp chúng tôi hiểu cách website được sử dụng và cải thiện trải nghiệm; không bao gồm nội dung giấy tờ hoặc dữ liệu bạn lưu trong ứng dụng. Dữ liệu trong app vẫn được lưu offline trên thiết bị của bạn.',
+    },
+    {
       title: 'Dữ liệu nào được lưu trong ứng dụng',
       desc: 'Ví giấy tờ lưu các thông tin do bạn tạo: tên giấy tờ, hình ảnh, PDF, ghi chú, phân loại, ngày hết hạn, và nội dung chữ nhận diện để hỗ trợ tìm kiếm nhanh hơn.',
     },
@@ -490,6 +495,10 @@ const privacySectionsByLanguage = {
     {
       title: 'Is your data shared anywhere?',
       desc: 'No. App data is stored 100% offline on your device and is not sent to any external service.',
+    },
+    {
+      title: 'Website usage analytics',
+      desc: 'This landing page uses Google Analytics only when you actively choose to enable Analytics. It helps us understand website usage and improve the experience; it does not include document contents or data stored in the app. Your app data remains offline on your device.',
     },
     {
       title: 'What data is stored in the app',
@@ -1056,7 +1065,7 @@ function PrivacyPage({ language }: { language: Language }) {
   const badge = language === 'vi' ? 'Quyền riêng tư' : 'Privacy'
   const title =
     language === 'vi' ? 'Chính sách quyền riêng tư của Ví giấy tờ' : 'Privacy Policy for Vi Giay To'
-  const updated = language === 'vi' ? 'Cập nhật lần cuối: 29/03/2026' : 'Last updated: March 29, 2026'
+  const updated = language === 'vi' ? 'Cập nhật lần cuối: 20/07/2026' : 'Last updated: July 20, 2026'
   const coreTitle =
     language === 'vi' ? 'Cam kết cốt lõi về quyền riêng tư' : 'Core privacy commitments'
 
@@ -1173,6 +1182,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <AnalyticsConsent language={language} />
       <Routes>
         <Route
           path={HOME_PATH}
