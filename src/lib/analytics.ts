@@ -10,7 +10,7 @@ type Gtag = (command: GtagCommand, ...args: unknown[]) => void
 
 declare global {
   interface Window {
-    dataLayer?: unknown[][]
+    dataLayer?: IArguments[]
     gtag?: Gtag
   }
 }
@@ -37,8 +37,10 @@ export function saveAnalyticsConsent(consent: AnalyticsConsent) {
 function getGtag(): Gtag {
   window.dataLayer ??= []
 
-  const gtag: Gtag = (command, ...args) => {
-    window.dataLayer?.push([command, ...args])
+  const gtag: Gtag = function gtag() {
+    // Google reads gtag commands from the native arguments object.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments)
   }
 
   window.gtag = gtag
